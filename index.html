@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-Schamber | Lexware & Elster Support für Heilberufe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { primary: '#001F66', secondary: '#009953', surface: '#F8FAFC' }, fontFamily: { sans: ['Manrope', 'sans-serif'] } } } }
+    </script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .fade-up { animation: fadeUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+        .faq-item[open] summary span { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-600 bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-primary text-white p-1 rounded font-bold text-sm">DS</div>
+                <span class="text-primary font-bold tracking-tight">DIGITAL-SCHAMBER</span>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="#vorteile" class="hover:text-secondary transition">Vorteile</a>
+                <a href="#angebot" class="hover:text-secondary transition">Angebot</a>
+                <a href="#faq" class="hover:text-secondary transition">F&A</a>
+            </div>
+            <a href="#kontakt" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 bg-gradient-to-br from-white via-slate-50 to-secondary/5 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="fade-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium text-secondary bg-secondary/10 rounded-full border border-secondary/20 uppercase tracking-wider">
+                    Vom Ex-Therapeuten für Kollegen
+                </div>
+                <h1 class="text-5xl font-bold text-primary leading-tight mb-6">Buchhaltung einfach <span class="text-secondary">selbst machen</span></h1>
+                <p class="text-lg text-slate-500 mb-8 leading-relaxed">
+                    Schluss mit teuren Monatsgebühren. Ich helfe Physios, Ergos, Logos, Podologen & Heilpraktikern, ihre Buchhaltung mit Lexware & Elster autonom in den Griff zu bekommen.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#angebot" class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-center shadow-lg shadow-primary/20 hover:scale-105 transition">Das Autonomie-Paket</a>
+                    <a href="#vorteile" class="bg-white text-primary px-8 py-4 rounded-xl font-bold text-center border border-slate-200 hover:bg-slate-50 transition">Warum sich das lohnt</a>
+                </div>
+            </div>
+            <div class="relative fade-up delay-200">
+                <!-- PLATZHALTER FÜR SCREENSHOT -->
+                <div class="bg-white p-4 rounded-3xl shadow-2xl border border-slate-100 rotate-2">
+                    <div class="bg-slate-100 rounded-2xl aspect-video flex items-center justify-center text-slate-400 italic">
+                        [Hier Screenshot Lexware Office Oberfläche einfügen]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ROI / Vergleich Sektion -->
+    <section id="vorteile" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">Wirtschaftlich denken, statt Geld verschenken</h2>
+                <p class="text-slate-500">Warum die Umstellung die rentabelste Entscheidung für Ihre Praxis ist.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                    <h3 class="text-xl font-bold text-primary mb-6">Klassischer Weg</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3 text-red-500"><span class="iconify" data-icon="lucide:x-circle"></span> ca. 1.800 € – 2.400 € Gebühren pro Jahr</li>
+                        <li class="flex items-center gap-3"><span class="iconify" data-icon="lucide:x-circle"></span> Auswertungen oft erst Monate später</li>
+                        <li class="flex items-center gap-3"><span class="iconify" data-icon="lucide:x-circle"></span> Zeitaufwand für Belegsortierung bleibt</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-secondary/5 rounded-3xl border border-secondary/20">
+                    <h3 class="text-xl font-bold text-secondary mb-6">Digital-Schamber Weg</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3 text-secondary"><span class="iconify" data-icon="lucide:check-circle"></span> Einmalige Investition von 950 €</li>
+                        <li class="flex items-center gap-3 text-secondary"><span class="iconify" data-icon="lucide:check-circle"></span> Finanzen täglich in Echtzeit im Blick</li>
+                        <li class="flex items-center gap-3 text-secondary"><span class="iconify" data-icon="lucide:check-circle"></span> 30 Min. Zeitaufwand pro Woche</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Das Angebot -->
+    <section id="angebot" class="py-24 bg-surface">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-primary mb-2">Das Autonomie-Paket</h2>
+                    <p class="text-slate-500 mb-10">Setup, Schulung und Begleitung bis zum ersten Abschluss.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 mb-12">
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start gap-3">
+                                <span class="iconify text-secondary mt-1" data-icon="lucide:check"></span>
+                                <span><strong>Technische Einrichtung:</strong> Lexware Installation & Elster-Anbindung.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="iconify text-secondary mt-1" data-icon="lucide:check"></span>
+                                <span><strong>Workflow-Setup:</strong> Import Ihrer Daten aus der Praxis-Software & Abrechnungszentren.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="iconify text-secondary mt-1" data-icon="lucide:check"></span>
+                                <span><strong>Einzelschulung:</strong> Gemeinsames Buchen Ihrer ersten realen Praxis-Belege.</span>
+                            </li>
+                        </ul>
+                        <div class="bg-primary/5 p-6 rounded-2xl border border-primary/10">
+                            <h4 class="font-bold text-primary mb-2 flex items-center gap-2">
+                                <span class="iconify" data-icon="lucide:shield-check"></span> Begleit-Garantie
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Ich stehe Ihnen 12 Monate für Rückfragen zur Verfügung – mindestens jedoch bis zur vollständigen Abwicklung Ihrer ersten eigenständigen Steuer (EÜR/USt) über das System.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-slate-100">
+                        <div>
+                            <span class="text-sm text-slate-400 block italic">Einmalinvestition</span>
+                            <span class="text-4xl font-bold text-primary">950 €</span>
+                            <span class="text-xs text-slate-400">zzgl. MwSt. | Keine Vorkasse</span>
+                        </div>
+                        <a href="#kontakt" class="bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-primary/90 transition">Jetzt Termin anfragen</a>
+                    </div>
+                    <p class="mt-6 text-[10px] text-slate-400 text-center uppercase tracking-widest">
+                        Wichtiger Hinweis: Keine Steuerberatung gemäß StBerG. Ausschließlich Hilfe zur Programmbedienung.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Sektion -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">Häufige Fragen</h2>
+            <div class="space-y-4">
+                <details class="faq-item group border border-slate-200 rounded-xl p-4 transition-all">
+                    <summary class="list-none flex justify-between items-center font-bold text-primary cursor-pointer">
+                        Darf ich die Buchhaltung ohne Steuerberater machen?
+                        <span class="iconify transition-transform" data-icon="lucide:chevron-down"></span>
+                    </summary>
+                    <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+                        Ja. Als Freiberufler oder Kleinunternehmer sind Sie gesetzlich berechtigt, Ihre Einnahmen-Überschuss-Rechnung (EÜR) und Umsatzsteuer-Meldungen selbst zu erstellen. Ich zeige Ihnen das Werkzeug dafür.
+                    </p>
+                </details>
+
+                <details class="faq-item group border border-slate-200 rounded-xl p-4 transition-all">
+                    <summary class="list-none flex justify-between items-center font-bold text-primary cursor-pointer">
+                        Ich bin technisch nicht begabt. Ist das zu kompliziert?
+                        <span class="iconify transition-transform" data-icon="lucide:chevron-down"></span>
+                    </summary>
+                    <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+                        Lexware Office ist für Laien konzipiert. Durch mein individuelles Setup ist das System für Sie bereits „vorgedacht“. Wenn Sie eine Praxis-Software bedienen können, können Sie auch Ihre Buchhaltung führen.
+                    </p>
+                </details>
+
+                <details class="faq-item group border border-slate-200 rounded-xl p-4 transition-all">
+                    <summary class="list-none flex justify-between items-center font-bold text-primary cursor-pointer">
+                        Ersetzen Sie meinen Steuerberater komplett?
+                        <span class="iconify transition-transform" data-icon="lucide:chevron-down"></span>
+                    </summary>
+                    <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+                        Ich ersetze die monatlichen Kosten für die laufende Buchhaltung. Für komplexe rechtliche Einzelfallberatung können Sie weiterhin einen Steuerberater nutzen – aber mit perfekt vorbereiteten Daten, was dessen Rechnung reduziert.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-primary mb-6">Lassen Sie uns sprechen.</h2>
+            <p class="text-lg text-slate-500 mb-10">In einem 15-minütigen Gespräch klären wir, ob Lexware für Ihre Praxis die richtige Wahl ist.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="mailto:info@digital-schamber.de" class="flex items-center justify-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold hover:shadow-md transition">
+                    <span class="iconify text-secondary" data-icon="lucide:mail"></span> info@digital-schamber.de
+                </a>
+                <div class="flex items-center justify-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold">
+                    <span class="iconify text-secondary" data-icon="lucide:phone"></span> +49 (0) 123 456789
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t border-slate-100 text-center text-[10px] text-slate-400 uppercase tracking-widest">
+        <p>© 2026 Digital-Schamber | Eine Digitalfit LLC Unternehmung | <a href="#" class="underline">Impressum</a> | <a href="#" class="underline">Datenschutz</a></p>
+    </footer>
+
+</body>
+</html>
