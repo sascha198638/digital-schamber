@@ -14,8 +14,6 @@
         .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
         .fade-up { animation: fadeUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-        .browser-mockup { position: relative; border-top: 24px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
-        .browser-mockup::before { content: ''; position: absolute; top: -16px; left: 10px; width: 8px; height: 8px; border-radius: 50%; background: #ff5f56; box-shadow: 12px 0 0 #ffbd2e, 24px 0 0 #27c93f; z-index: 10; }
     </style>
 </head>
 <body class="font-sans antialiased text-slate-600 bg-white">
@@ -49,9 +47,9 @@
                     <a href="#angebot" class="bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:scale-105 transition">Das Autonomie-Paket</a>
                 </div>
             </div>
-            <div class="relative fade-up delay-200">
-                <!-- Screenshot Lexoffice -->
-                <div class="browser-mockup">
+                <div class="relative fade-up delay-200 flex justify-center">
+                    <!-- Screenshot Lexoffice - Gleicher Rahmen wie bei Elster -->
+                <div class="rounded-xl overflow-hidden shadow-xl border border-slate-100 max-w-lg lg:max-w-xl mx-auto bg-white">
                     <img src="lexoffice.png" alt="Lexware Office Oberfläche" class="w-full h-auto block">
                 </div>
             </div>
@@ -134,6 +132,22 @@
         </div>
     </section>
 
+<!-- Story - Sachlich & Authentisch -->
+    <section class="py-24 bg-white border-t border-slate-100">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-primary mb-8">Transparenz und Eigenständigkeit</h2>
+            <p class="text-slate-600 mb-6 leading-relaxed text-lg">
+                Ich war von 2019 bis Ende 2024 als Physiotherapeut selbstständig. In den letzten zwei Jahren meiner Praxiszeit habe ich meine Buchhaltung komplett auf ein digitales System umgestellt.
+            </p>
+            <p class="text-slate-500 mb-6 leading-relaxed">
+                Dadurch wurden meine Finanzen endlich <strong>transparent</strong>. Ich wusste jeden Tag genau, wie es um meine Praxis steht. Vor allem gewann ich die <strong>Unabhängigkeit vom Steuerberater</strong> für die laufenden Aufgaben. Ich musste nicht mehr auf externe Auswertungen warten, sondern konnte meine Meldungen selbst bearbeiten.
+            </p>
+            <p class="text-slate-500 italic">
+                Diesen Prozess der Umstellung begleite ich heute bei meinen Kollegen – pragmatisch und auf Augenhöhe.
+            </p>
+        </div>
+    </section>
+
     <!-- Paket -->
     <section id="angebot" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6">
@@ -176,8 +190,8 @@
             <p>Schamber E-Trade LLC | Schamber Praxis Digitalisierung</p>
             <p>[Hier Ihre LLC Adresse einfügen]</p>
             <div class="flex justify-center gap-6">
-                <a href="#" class="underline">Impressum</a>
-                <a href="#" class="underline">Datenschutz</a>
+                <a href="impressum.html" class="underline">Impressum</a>
+                <a href="datenschutz.html" class="underline">Datenschutz</a>
             </div>
             <p class="mt-4 pt-4 border-t border-slate-200 text-[9px] lowercase">© 2026 digital-schamber.de</p>
         </div>
