@@ -14,10 +14,10 @@
         .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
         .fade-up { animation: fadeUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-        .copy-btn { transition: all 0.3s ease; }
+        .copy-btn { transition: all 0.3s ease; cursor: pointer; }
     </style>
 </head>
-<body class="font-sans antialiased text-slate-600 bg-white">
+<body class="font-sans antialiased text-slate-600 bg-white leading-relaxed">
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 glass-nav">
@@ -30,23 +30,23 @@
                 </div>
             </div>
             <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#vorteile" class="hover:text-secondary transition">Vorteile</a>
-                <a href="#werkzeuge" class="hover:text-secondary transition">Software</a>
-                <a href="#angebot" class="hover:text-secondary transition">Paket</a>
+                <a href="#vorteile" class="hover:text-secondary transition text-primary">Vorteile</a>
+                <a href="#werkzeuge" class="hover:text-secondary transition text-primary">Software</a>
+                <a href="#angebot" class="hover:text-secondary transition text-primary">Paket</a>
             </div>
             <a href="https://calendly.com/physio-schamber/30min" target="_blank" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition shadow-sm">Termin buchen</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="pt-32 pb-20 bg-gradient-to-br from-white via-slate-50 to-secondary/5 overflow-hidden">
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 bg-gradient-to-br from-white via-slate-50 to-secondary/5 overflow-hidden border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
             <div class="fade-up">
                 <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium text-secondary bg-secondary/10 rounded-full border border-secondary/20 uppercase tracking-wider">
                     Ehem. Physiotherapeut unterstützt Kollegen
                 </div>
-                <h1 class="text-5xl font-bold text-primary leading-tight mb-6">Praxis-Buchhaltung: <br><span class="text-secondary">Sicher & Autonom.</span></h1>
-                <p class="text-lg text-slate-500 mb-8 leading-relaxed">
+                <h1 class="text-5xl font-bold text-primary leading-tight mb-6 tracking-tight">Praxis-Finanzen: <br><span class="text-secondary">Sicher & Autonom.</span></h1>
+                <p class="text-lg text-slate-500 mb-8 max-w-lg leading-relaxed">
                     Ich helfe Therapeuten und Heilpraktikern, ihre Buchhaltung mit Lexware & Elster selbst in die Hand zu nehmen. Remote-Support auf Augenhöhe – direkt aus der Praxis-Erfahrung.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
@@ -54,55 +54,53 @@
                         <span class="iconify" data-icon="lucide:calendar"></span> Wunschtermin wählen
                     </a>
                     <button onclick="copyEmail(this)" class="copy-btn bg-white text-primary px-8 py-4 rounded-xl font-bold text-center border border-slate-200 hover:bg-slate-50 transition flex items-center justify-center gap-2">
-                        <span class="iconify" data-icon="lucide:mail"></span> E-Mail kopieren <span class="iconify opacity-40" data-icon="lucide:copy"></span>
+                        <span class="iconify" data-icon="lucide:mail"></span> E-Mail kopieren <span class="iconify opacity-40 ml-1" data-icon="lucide:copy"></span>
                     </button>
                 </div>
             </div>
             <div class="relative fade-up delay-200 flex justify-center">
-                <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-100 max-w-lg lg:max-w-xl mx-auto bg-white">
+                <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-100 max-w-lg lg:max-w-xl mx-auto bg-white">
                     <img src="lexoffice.png" alt="Lexware Office Oberfläche" class="w-full h-auto block">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Werkzeuge (Lexware & Elster Umgebaut) -->
-    <section id="werkzeuge" class="py-24 bg-white border-t border-slate-100">
+    <!-- Werkzeuge (Lexware & Elster) -->
+    <section id="werkzeuge" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-16 items-start">
-                <!-- Lexware Bereich -->
                 <div>
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shadow-sm">
                             <span class="iconify text-3xl" data-icon="lucide:layout-dashboard"></span>
                         </div>
-                        <h2 class="text-2xl font-bold text-primary">Lexware Office</h2>
+                        <h2 class="text-2xl font-bold text-primary tracking-tight">Lexware Office</h2>
                     </div>
                     <p class="text-slate-600 leading-relaxed mb-6 text-sm">
                         Lexware Office automatisiert Ihren Bank-Abgleich und speichert Belege GoBD-konform. Als ehem. Physio habe ich das System erfolgreich für meine eigene Transparenz genutzt.
                     </p>
                     <ul class="space-y-4 text-xs text-slate-500">
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1" data-icon="lucide:check"></span> Automatischer Bank-Abgleich</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1" data-icon="lucide:check"></span> GoBD-konforme Belegspeicherung</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1" data-icon="lucide:check"></span> Einfache Bedienung per App & Desktop</li>
+                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Automatischer Bank-Abgleich</li>
+                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> GoBD-konforme Belegspeicherung</li>
+                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Einfache Bedienung per App & Desktop</li>
                     </ul>
                 </div>
-                <!-- Elster Bereich (Neu mit Häkchen) -->
                 <div>
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary">
+                        <div class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary shadow-sm">
                             <span class="iconify text-3xl" data-icon="lucide:send"></span>
                         </div>
-                        <h2 class="text-2xl font-bold text-primary">Elster Schnittstelle</h2>
+                        <h2 class="text-2xl font-bold text-primary tracking-tight">Elster Schnittstelle</h2>
                     </div>
                     <p class="text-slate-600 leading-relaxed mb-6 text-sm">
                         ELSTER ist die offizielle digitale Brücke zum Finanzamt. Wir richten die direkte Schnittstelle ein, damit Ihre Meldungen rechtssicher und verschlüsselt übertragen werden.
                     </p>
                     <ul class="space-y-4 text-xs text-slate-500">
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1" data-icon="lucide:check"></span> Umsatzsteuer-Voranmeldung per Klick</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1" data-icon="lucide:check"></span> Sichere EÜR-Übermittlung (Anlage EÜR)</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1" data-icon="lucide:check"></span> TLS-verschlüsselte Datenübertragung</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1" data-icon="lucide:check"></span> Offizielle Zertifikats-Einbindung (.pfx)</li>
+                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Umsatzsteuer-Voranmeldung per Klick</li>
+                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Sichere EÜR-Übermittlung (Anlage EÜR)</li>
+                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> TLS-verschlüsselte Datenübertragung</li>
+                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Offizielle Zertifikats-Einbindung (.pfx)</li>
                     </ul>
                 </div>
             </div>
@@ -110,27 +108,55 @@
     </section>
 
     <!-- Psychologische Typen -->
-    <section id="vorteile" class="py-24 bg-surface">
+    <section id="vorteile" class="py-24 bg-surface border-y border-slate-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-primary mb-4">Unterstützung, die zu Ihnen passt</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto italic">Jeder arbeitet anders. Mir ist wichtig, dass Sie genau den Rückhalt bekommen, den Sie brauchen.</p>
+                <h2 class="text-3xl font-bold text-primary mb-4 tracking-tight">Unterstützung, die zu Ihnen passt</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto italic text-sm">Jeder arbeitet anders. Mir ist wichtig, dass Sie genau den Rückhalt bekommen, den Sie brauchen.</p>
             </div>
+            
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-10 rounded-3xl border border-slate-100 bg-white shadow-sm">
+                <!-- Autonomie -->
+                <div class="p-10 rounded-3xl border border-slate-200 bg-white shadow-sm flex flex-col hover:shadow-md transition">
                     <h3 class="text-xl font-bold text-primary mb-4">Eigenständigkeit & Durchblick</h3>
-                    <p class="text-sm text-slate-600 mb-6">Für alle, die ihre Zahlen selbst verstehen wollen. Keine Abhängigkeit mehr vom Steuerberater und keine Wartezeit auf externe Auswertungen.</p>
-                    <ul class="space-y-3 text-xs text-slate-500">
-                        <li class="flex items-center gap-2"><span class="iconify text-secondary" data-icon="lucide:check"></span> Volle Kontrolle über jeden Beleg</li>
-                        <li class="flex items-center gap-2"><span class="iconify text-secondary" data-icon="lucide:check"></span> Den Praxis-Gewinn täglich im Blick</li>
+                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                        Für alle, die die Fäden selbst in der Hand halten wollen. Gewinnen Sie die Freiheit zurück, Ihre Praxis-Finanzen eigenständig zu steuern.
+                    </p>
+                    <ul class="space-y-4 text-xs text-slate-500 flex-grow">
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
+                            <span><strong>Maximale Entscheidungsfreiheit:</strong> Nach meiner Einrichtung entscheiden Sie selbst, ob Sie vollständig alleine weitermachen oder den Steuerberater nur noch punktuell für Fachfragen nutzen.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
+                            <span><strong>Kommunikation auf Augenhöhe:</strong> Durch den direkten Zugriff auf Elster kommunizieren Sie professionell und transparent mit dem Finanzamt – ohne Umwege.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
+                            <span><strong>Täglicher Echtzeit-Blick:</strong> Volle Kontrolle über jeden Beleg und den aktuellen Praxis-Gewinn direkt auf Ihrem Dashboard.</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="p-10 rounded-3xl border border-slate-100 bg-secondary/5 shadow-sm">
+
+                <!-- Sicherheit -->
+                <div class="p-10 rounded-3xl border border-slate-200 bg-secondary/5 shadow-sm flex flex-col hover:shadow-md transition text-slate-700">
                     <h3 class="text-xl font-bold text-primary mb-4">Sicherheit & Rückhalt</h3>
-                    <p class="text-sm text-slate-600 mb-6">Buchhaltung muss sich nicht einsam anfühlen. Ich bin die Brücke zum Finanzamt und stehe bei Unsicherheiten an Ihrer Seite.</p>
-                    <ul class="space-y-3 text-xs text-slate-500">
-                        <li class="flex items-center gap-2"><span class="iconify text-secondary" data-icon="lucide:check"></span> Nicht allein vor Elster-Formularen sitzen</li>
-                        <li class="flex items-center gap-2"><span class="iconify text-secondary" data-icon="lucide:check"></span> Begleitung bis zum ersten erfolgreichen Abschluss</li>
+                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                        Buchhaltung muss sich nicht einsam oder bedrohlich anfühlen. Ich schaffe ein stabiles Fundament, auf dem Sie sich jederzeit sicher fühlen können.
+                    </p>
+                    <ul class="space-y-4 text-xs text-slate-500 flex-grow">
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
+                            <span><strong>Papierloses Langzeit-Archiv:</strong> Das System erstellt ein GoBD-konformes Archiv aller Finanzflüsse. Die analoge Speicherung in Aktenordnern gehört damit der Vergangenheit an.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
+                            <span><strong>Schutz bei Rückfragen:</strong> Bei Nachfragen vom Finanzamt haben Sie eine saubere, schnell zugreifbare Dokumentation aller Vorgänge sofort griffbereit.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600">
+                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
+                            <span><strong>Persönliche Begleitung:</strong> Ich stehe als Puffer an Ihrer Seite, bis Sie sich in der Bedienung der Software und Elster absolut sicher fühlen.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -140,7 +166,7 @@
     <!-- Story -->
     <section class="py-24 bg-white">
         <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold text-primary mb-8 underline decoration-secondary decoration-4 underline-offset-8">Transparenz und Eigenständigkeit</h2>
+            <h2 class="text-2xl font-bold text-primary mb-8 underline decoration-secondary decoration-4 underline-offset-8 tracking-tight">Transparenz und Eigenständigkeit</h2>
             <p class="text-slate-600 mb-6 leading-relaxed">
                 Ich war von 2019 bis Ende 2024 als Physiotherapeut selbstständig. In den letzten zwei Jahren meiner Praxiszeit habe ich meine Buchhaltung komplett auf ein digitales System umgestellt.
             </p>
@@ -158,50 +184,56 @@
                     <span class="iconify text-9xl font-bold" data-icon="lucide:bot"></span>
                 </div>
                 <div class="relative z-10">
-                    <h3 class="text-2xl font-bold text-primary mb-4 flex items-center gap-3">
+                    <h3 class="text-2xl font-bold text-primary mb-4 flex items-center gap-3 tracking-tight">
                         <span class="iconify text-secondary" data-icon="lucide:zap"></span>
                         Option: Die intelligente Praxis (KI)
                     </h3>
                     <p class="text-sm text-slate-600 mb-8 max-w-2xl leading-relaxed">
                         Digitalisierung endet nicht bei der Buchhaltung. Als optionale Erweiterung unterstütze ich Sie dabei, eine **lokale KI** auf Ihrem Praxis-Rechner einzurichten – ohne Cloud und zu 100% datenschutzkonform. Durchsuchen Sie Ihre Fachliteratur & PDFs in Sekunden.
                     </p>
-                    <div class="flex items-center gap-4 text-xs text-slate-500">
-                        <span class="flex items-center gap-1"><span class="iconify text-secondary" data-icon="lucide:shield-check"></span> 100% DSGVO (Local Only)</span>
-                        <span class="flex items-center gap-1"><span class="iconify text-secondary" data-icon="lucide:check"></span> Keine monatlichen Abokosten</span>
+                    <div class="flex items-center gap-4 text-[10px] text-slate-500 uppercase tracking-widest font-bold">
+                        <span class="flex items-center gap-1"><span class="iconify text-secondary" data-icon="lucide:shield-check"></span> 100% DSGVO</span>
+                        <span class="flex items-center gap-1"><span class="iconify text-secondary" data-icon="lucide:check"></span> Keine monatlichen Kosten</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Paket -->
+    <!-- Paket & Preis -->
     <section id="angebot" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-primary rounded-3xl p-10 md:p-16 text-white shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-secondary opacity-10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                <h2 class="text-3xl font-bold mb-4">Das Autonomie-Paket</h2>
-                <p class="text-blue-100 mb-10">Einmaliges Setup & 12 Monate Begleitung bis zum ersten eigenständigen Abschluss.</p>
+                <h2 class="text-3xl font-bold mb-4 tracking-tight">Das Autonomie-Paket</h2>
+                <p class="text-blue-100 mb-10 leading-relaxed">Einmaliges Setup & 12 Monate Begleitung bis zum ersten eigenständigen Abschluss.</p>
+                
                 <div class="grid md:grid-cols-2 gap-10 mb-12">
                     <ul class="space-y-4 text-sm">
-                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl" data-icon="lucide:check"></span> Lexware & Elster Ersteinrichtung</li>
-                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl" data-icon="lucide:check"></span> Workflow-Setup für Praxis-Software</li>
-                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl" data-icon="lucide:check"></span> Gemeinsame Verbuchung realer Belege</li>
-                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl" data-icon="lucide:check"></span> Unbegrenzte Rückfragen per Support</li>
+                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl flex-shrink-0" data-icon="lucide:check"></span> Lexware & Elster Ersteinrichtung</li>
+                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl flex-shrink-0" data-icon="lucide:check"></span> Workflow-Setup für Praxis-Software</li>
+                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl flex-shrink-0" data-icon="lucide:check"></span> Gemeinsame Verbuchung realer Belege</li>
+                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl flex-shrink-0" data-icon="lucide:check"></span> Unbegrenzte Rückfragen per Support</li>
                     </ul>
                     <div class="flex flex-col justify-center bg-white/5 p-6 rounded-2xl border border-white/10">
-                        <div class="text-3xl font-bold mb-1">950 €</div>
-                        <div class="text-xs opacity-60 mb-4 uppercase tracking-widest">Einmalinvestition zzgl. MwSt.</div>
-                        <p class="text-[10px] opacity-50 italic">Keine Vorkasse nötig – Rechnung nach Setup.</p>
+                        <div class="text-4xl font-bold mb-1 tracking-tighter">950 €</div>
+                        <div class="text-xs opacity-60 mb-4 uppercase tracking-widest font-medium">Einmalinvestition zzgl. MwSt.</div>
+                        <p class="text-[10px] opacity-60 italic mb-4 leading-tight">Keine Anzahlung nötig – Rechnung erst nach Setup.</p>
+                        <button onclick="copyPhone(this)" class="copy-btn text-[11px] text-secondary font-bold flex items-center gap-1">
+                            <span class="iconify" data-icon="lucide:phone"></span> Fragen? WhatsApp: +49 156 79779534 <span class="iconify opacity-50" data-icon="lucide:copy"></span>
+                        </button>
                     </div>
                 </div>
+
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="https://calendly.com/physio-schamber/30min" target="_blank" class="bg-secondary text-white px-8 py-4 rounded-xl font-bold text-center hover:shadow-lg transition flex items-center justify-center gap-2">
                         <span class="iconify text-xl" data-icon="lucide:calendar"></span> Wunschtermin sichern
                     </a>
                     <button onclick="copyEmail(this)" class="copy-btn bg-primary/30 text-white border border-white/30 px-8 py-4 rounded-xl font-bold text-center hover:bg-primary/40 transition flex items-center justify-center gap-2">
-                        <span class="iconify text-xl" data-icon="lucide:mail"></span> E-Mail kopieren <span class="iconify opacity-50" data-icon="lucide:copy"></span>
+                        <span class="iconify text-xl" data-icon="lucide:mail"></span> E-Mail kopieren <span class="iconify opacity-50 ml-1" data-icon="lucide:copy"></span>
                     </button>
                 </div>
+                <p class="mt-8 text-[10px] opacity-40 uppercase tracking-widest leading-relaxed">Hinweis: Schamber Praxis Digitalisierung bietet technische Unterstützung an. Keine Steuerberatung.</p>
             </div>
         </div>
     </section>
@@ -209,33 +241,41 @@
     <!-- Kontakt -->
     <section id="kontakt" class="py-24 bg-white border-t border-slate-100">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-primary mb-6">Lassen Sie uns starten.</h2>
-            <p class="text-lg text-slate-500 mb-12 leading-relaxed">Remote-Support via AnyDesk & WhatsApp Call / Satellite-Business.</p>
+            <h2 class="text-3xl font-bold text-primary mb-6 tracking-tight">Lassen Sie uns starten.</h2>
+            <p class="text-lg text-slate-500 mb-12 leading-relaxed max-w-2xl mx-auto">Remote-Support via AnyDesk & WhatsApp Call oder direkt über Satellite.</p>
+            
             <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <!-- Buchung -->
                 <a href="https://calendly.com/physio-schamber/30min" target="_blank" class="flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg transition">
-                    <span class="iconify text-xl" data-icon="lucide:calendar"></span> Wunschtermin in Calendly
+                    <span class="iconify text-xl" data-icon="lucide:calendar"></span> Termin in Calendly wählen
                 </a>
-                <button onclick="copyEmail(this)" class="copy-btn flex items-center justify-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold hover:shadow-md transition">
-                    <span class="iconify text-secondary text-xl" data-icon="lucide:mail"></span> info@digital-schamber.de <span class="iconify opacity-30" data-icon="lucide:copy"></span>
+                <!-- Email Copy -->
+                <button onclick="copyEmail(this)" class="copy-btn flex items-center justify-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold hover:shadow-md transition text-primary">
+                    <span class="iconify text-secondary text-xl" data-icon="lucide:mail"></span> info@digital-schamber.de <span class="iconify opacity-30 ml-1" data-icon="lucide:copy"></span>
+                </button>
+                <!-- Telefon Copy -->
+                <button onclick="copyPhone(this)" class="copy-btn flex items-center justify-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold hover:shadow-md transition text-primary">
+                    <span class="iconify text-secondary text-xl" data-icon="lucide:phone"></span> +49 (0) 156 79779534 <span class="iconify opacity-30 ml-1" data-icon="lucide:copy"></span>
                 </button>
             </div>
+            <p class="mt-8 text-xs text-slate-400">Hinweis: Gerne auch via WhatsApp erreichbar. Beste Erreichbarkeit vormittags.</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-slate-50 border-t border-slate-100 text-center text-[10px] text-slate-400 uppercase tracking-widest px-6">
-        <div class="max-w-7xl mx-auto space-y-4">
-            <p class="font-bold text-slate-600">Schamber E-Trade LLC | Schamber Praxis Digitalisierung</p>
+    <footer class="py-16 bg-slate-50 border-t border-slate-100 text-center text-[10px] text-slate-400 uppercase tracking-widest px-6">
+        <div class="max-w-7xl mx-auto space-y-4 font-medium">
+            <p class="text-slate-600">Schamber E-Trade LLC | Schamber Praxis Digitalisierung</p>
             <p>30 N Gould St, Ste R | Sheridan, WY 82801, USA</p>
-            <div class="flex justify-center gap-6">
+            <div class="flex justify-center gap-6 text-[11px] mt-4">
                 <a href="impressum.html" class="underline hover:text-primary transition">Impressum</a>
                 <a href="datenschutz.html" class="underline hover:text-primary transition">Datenschutz</a>
             </div>
-            <p class="mt-4 pt-4 border-t border-slate-200 text-[9px] lowercase opacity-50 italic">© 2026 digital-schamber.de - Alexander Schamber</p>
+            <p class="mt-8 pt-8 border-t border-slate-200 text-[9px] lowercase opacity-50 italic">© 2026 digital-schamber.de - Alexander Schamber</p>
         </div>
     </footer>
 
-    <!-- LOGIK FÜR EMAIL KOPIEREN -->
+    <!-- LOGIK FÜR KOPIER-FUNKTIONEN -->
     <script>
         function copyEmail(btn) {
             const email = 'info@digital-schamber.de';
@@ -246,6 +286,22 @@
                 setTimeout(() => {
                     btn.innerHTML = originalHTML;
                     btn.classList.remove('bg-secondary', 'text-white');
+                }, 2000);
+            });
+        }
+
+        function copyPhone(btn) {
+            const phone = '+4915679779534';
+            const originalHTML = btn.innerHTML;
+            navigator.clipboard.writeText(phone).then(() => {
+                // Bei der Telefon-Logik müssen wir prüfen, ob es der kleine oder große Button ist
+                const isSmall = btn.classList.contains('text-[11px]');
+                btn.innerHTML = isSmall ? 'Nummer kopiert!' : '<span class="iconify" data-icon="lucide:check"></span> Nummer kopiert!';
+                btn.classList.add('text-secondary');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('text-secondary');
                 }, 2000);
             });
         }
