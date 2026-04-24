@@ -3,77 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum | Schamber Praxis Digitalisierung</title>
+    <title>Impressum · Legal Notice · Thông tin pháp lý | sasch</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { colors: { primary: '#011627', secondary: '#2EC4B6', surface: '#F8FAFC' }, fontFamily: { sans: ['Manrope', 'sans-serif'] } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FAF5EE',
+                        sand: '#F2E9DC',
+                        ink: '#162138',
+                        teal: '#2A7F76',
+                        coral: '#E06A3B'
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['"Bricolage Grotesque"', 'serif']
+                    }
+                }
+            }
+        }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        [data-lang]:not([data-lang="ru"]) { display:none; }
+        html[lang="en"] [data-lang="ru"], html[lang="en"] [data-lang="vi"] { display:none; }
+        html[lang="en"] [data-lang="en"] { display:revert; }
+        html[lang="vi"] [data-lang="ru"], html[lang="vi"] [data-lang="en"] { display:none; }
+        html[lang="vi"] [data-lang="vi"] { display:revert; }
+        .lang-active { background:#162138; color:#FAF5EE; }
+    </style>
 </head>
-<body class="font-sans antialiased text-slate-600 bg-surface">
+<body class="font-sans text-ink/80 bg-cream antialiased">
 
-    <nav class="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center">
-            <a href="index.html" class="flex items-center gap-2 text-primary hover:opacity-70 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                <span class="font-bold text-sm uppercase tracking-tight">Zurück zur Startseite</span>
-            </a>
+<nav class="border-b border-ink/10 bg-cream/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 text-ink hover:opacity-70 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <span class="font-display font-bold text-sm tracking-tight" data-lang="ru">На главную</span>
+            <span class="font-display font-bold text-sm tracking-tight" data-lang="en">Back home</span>
+            <span class="font-display font-bold text-sm tracking-tight" data-lang="vi">Trang chủ</span>
+        </a>
+        <div class="flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest">
+            <button data-setlang="ru" class="px-2 py-1 rounded">RU</button>
+            <button data-setlang="en" class="px-2 py-1 rounded">EN</button>
+            <button data-setlang="vi" class="px-2 py-1 rounded">VI</button>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <main class="max-w-3xl mx-auto px-6 py-16 md:py-24">
-        <h1 class="text-4xl font-bold text-primary mb-12">Impressum</h1>
+<main class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+    <h1 class="font-display text-4xl md:text-5xl font-bold text-ink mb-12 tracking-tight">
+        <span data-lang="ru">Impressum</span>
+        <span data-lang="en">Legal Notice</span>
+        <span data-lang="vi">Thông tin pháp lý</span>
+    </h1>
 
-        <div class="space-y-12 bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100">
-            
-            <section>
-                <h2 class="text-xs uppercase tracking-widest text-secondary font-bold mb-4">Angaben gemäß § 5 TMG</h2>
-                <div class="text-lg text-primary leading-relaxed">
-                    <p class="font-bold">Schamber E-Trade LLC</p>
-                    <p>Schamber Praxis Digitalisierung</p>
-                    <p>30 N Gould St, Ste R</p>
-                    <p>Sheridan, WY 82801</p>
-                    <p>United States of America</p>
-                </div>
-            </section>
+    <div class="space-y-12 bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-ink/5">
 
-            <section>
-                <h2 class="text-xs uppercase tracking-widest text-secondary font-bold mb-4">Vertreten durch</h2>
-                <p class="text-lg text-primary">Alexander Schamber</p>
+        <section>
+            <h2 class="text-[11px] uppercase tracking-widest text-coral font-bold mb-4">
+                <span data-lang="ru">Angaben gemäß § 5 TMG</span>
+                <span data-lang="en">Information according to § 5 TMG</span>
+                <span data-lang="vi">Thông tin theo § 5 TMG</span>
+            </h2>
+            <div class="text-lg text-ink leading-relaxed">
+                <p class="font-bold">Schamber E-Trade LLC</p>
+                <p>30 N Gould St, Ste R</p>
+                <p>Sheridan, WY 82801</p>
+                <p>United States of America</p>
             </div>
+        </section>
 
-            <section>
-                <h2 class="text-xs uppercase tracking-widest text-secondary font-bold mb-4">Kontakt</h2>
-                <p class="text-primary">E-Mail: <a href="mailto:info@digital-schamber.de" class="text-secondary underline">info@digital-schamber.de</a></p>
-                <p class="text-primary">Telefon: <a href="tel:+4915679779534" class="hover:text-secondary transition">+49 (0) 156 79779534</a></p>
-            </section>
+        <section>
+            <h2 class="text-[11px] uppercase tracking-widest text-coral font-bold mb-4">
+                <span data-lang="ru">Представитель</span>
+                <span data-lang="en">Represented by</span>
+                <span data-lang="vi">Đại diện</span>
+            </h2>
+            <p class="text-lg text-ink">Alexander Schamber</p>
+        </section>
 
-            <section>
-                <h2 class="text-xs uppercase tracking-widest text-secondary font-bold mb-4">Registereintrag</h2>
-                <p class="text-primary">Eintragung im Handelsregister (Wyoming Secretary of State)</p>
-                <p class="text-primary">Registergericht: Wyoming Secretary of State</p>
-                <p class="text-primary">Entity ID: 2025-001656129</p>
-            </section>
+        <section>
+            <h2 class="text-[11px] uppercase tracking-widest text-coral font-bold mb-4">
+                <span data-lang="ru">Контакт</span>
+                <span data-lang="en">Contact</span>
+                <span data-lang="vi">Liên hệ</span>
+            </h2>
+            <p class="text-ink">
+                <span data-lang="ru">E-Mail:</span>
+                <span data-lang="en">Email:</span>
+                <span data-lang="vi">Email:</span>
+                <a href="mailto:sascha@digital-schamber.de" class="text-teal underline">sascha@digital-schamber.de</a>
+            </p>
+            <p class="text-ink">
+                Telegram: <a href="https://t.me/sasch_a_scha" class="text-teal underline">@sasch_a_scha</a>
+            </p>
+        </section>
 
-            <section>
-                <h2 class="text-xs uppercase tracking-widest text-secondary font-bold mb-4">Verantwortlich für den Inhalt</h2>
-                <p class="text-primary">
-                    Alexander Schamber<br>
-                    30 N Gould St, Ste R<br>
-                    Sheridan, WY 82801, USA
-                </p>
-            </section>
+        <section>
+            <h2 class="text-[11px] uppercase tracking-widest text-coral font-bold mb-4">
+                <span data-lang="ru">Регистрация</span>
+                <span data-lang="en">Company registration</span>
+                <span data-lang="vi">Đăng ký công ty</span>
+            </h2>
+            <p class="text-ink" data-lang="ru">Регистрирующий орган: Wyoming Secretary of State</p>
+            <p class="text-ink" data-lang="en">Registering authority: Wyoming Secretary of State</p>
+            <p class="text-ink" data-lang="vi">Cơ quan đăng ký: Wyoming Secretary of State</p>
+            <p class="text-ink">Entity ID: 2025-001656129</p>
+        </section>
 
-            <section class="pt-8 border-t border-slate-100 italic text-sm text-slate-400 leading-relaxed">
-                <p><strong>Rechtlicher Hinweis:</strong> Schamber Praxis Digitalisierung bietet ausschließlich technische Unterstützung, Installation und Anwenderschulungen für Buchhaltungssoftware an. Es findet keine Steuerberatung oder Rechtsberatung im Sinne des Steuerberatungsgesetzes (StBerG) oder des Rechtsdienstleistungsgesetzes (RDG) statt.</p>
-            </section>
+        <section>
+            <h2 class="text-[11px] uppercase tracking-widest text-coral font-bold mb-4">
+                <span data-lang="ru">Ответственный за содержание</span>
+                <span data-lang="en">Responsible for content</span>
+                <span data-lang="vi">Chịu trách nhiệm nội dung</span>
+            </h2>
+            <p class="text-ink">
+                Alexander Schamber<br>
+                30 N Gould St, Ste R<br>
+                Sheridan, WY 82801, USA
+            </p>
+        </section>
 
-        </div>
-    </main>
+        <section class="pt-8 border-t border-ink/10 italic text-sm text-ink/50 leading-relaxed">
+            <p data-lang="ru"><strong>Характер деятельности:</strong> Schamber E-Trade LLC оказывает услуги личного закупочного агента (personal shopping / procurement concierge) — закупает товары в магазинах ЕС и США и передаёт их заказчикам во Вьетнаме. Это не маркетплейс, не дропшиппинг и не импортно-экспортная компания; все закупки выполняются штучно под конкретный заказ физлица.</p>
+            <p data-lang="en"><strong>Nature of the business:</strong> Schamber E-Trade LLC provides a personal shopping / procurement concierge service — purchasing goods from EU and US retailers and delivering them to individual customers in Vietnam. It is not a marketplace, dropshipping operation, or general import/export business; every purchase is made item-by-item on behalf of a specific natural-person customer.</p>
+            <p data-lang="vi"><strong>Bản chất dịch vụ:</strong> Schamber E-Trade LLC cung cấp dịch vụ mua sắm cá nhân / concierge mua hộ — mua hàng tại các cửa hàng EU và Mỹ và giao đến khách hàng cá nhân tại Việt Nam. Đây không phải là sàn thương mại điện tử, dropshipping hay công ty xuất nhập khẩu; mỗi đơn hàng được mua riêng theo yêu cầu của một khách hàng cá nhân cụ thể.</p>
+        </section>
 
-    <footer class="py-12 text-center text-[10px] text-slate-400 uppercase tracking-widest">
-        <p>© 2026 digital-schamber.de</p>
-    </footer>
+    </div>
+</main>
 
+<footer class="py-12 text-center text-[10px] text-ink/40 uppercase tracking-widest">
+    <p>© 2026 digital-schamber.de · Schamber E-Trade LLC</p>
+</footer>
+
+<script>
+(function () {
+    const html = document.documentElement;
+    const buttons = document.querySelectorAll('[data-setlang]');
+    function setLang(lang) {
+        if (!['ru','en','vi'].includes(lang)) lang = 'ru';
+        html.setAttribute('lang', lang);
+        try { localStorage.setItem('sasch.lang', lang); } catch (e) {}
+        buttons.forEach(b => b.classList.toggle('lang-active', b.getAttribute('data-setlang') === lang));
+    }
+    let initial = null;
+    try { initial = localStorage.getItem('sasch.lang'); } catch(e) {}
+    if (!initial) {
+        const nav = (navigator.language || '').toLowerCase();
+        if (nav.startsWith('en')) initial = 'en';
+        else if (nav.startsWith('vi')) initial = 'vi';
+        else initial = 'ru';
+    }
+    setLang(initial);
+    buttons.forEach(b => b.addEventListener('click', () => setLang(b.getAttribute('data-setlang'))));
+})();
+</script>
 </body>
 </html>

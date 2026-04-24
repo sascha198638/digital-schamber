@@ -1,310 +1,707 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schamber Praxis Digitalisierung | Lexware & Elster Support</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = { theme: { extend: { colors: { primary: '#011627', secondary: '#2EC4B6', surface: '#F8FAFC' }, fontFamily: { sans: ['Manrope', 'sans-serif'] } } } }
-    </script>
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-        .fade-up { animation: fadeUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
-        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-        .copy-btn { transition: all 0.3s ease; cursor: pointer; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sasch — Заказы с Запада в Нячанг · Orders from the West to Nha Trang · Đặt hàng từ phương Tây về Nha Trang</title>
+<meta name="description" content="Personal shopper & procurement from Germany, EU and USA to Nha Trang, Vietnam. Cosmetics, vitamins, electronics, clothing, home and more — honest pricing, no hidden fees, EVFTA-optimised customs.">
+<meta property="og:title" content="Sasch — Заказы с Запада в Нячанг">
+<meta property="og:description" content="Доставка оригинальных товаров из Германии, ЕС и США прямо в Нячанг. Честный расчёт, EVFTA, групповые партии.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digital-schamber.de/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="vi_VN">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='80' font-size='80'%3E📦%3C/text%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream:   '#FAF5EE',
+          sand:    '#F2E9DC',
+          ink:     '#162138',
+          teal:    '#2A7F76',
+          coral:   '#E06A3B',
+          coralDk: '#C0542B'
+        },
+        fontFamily: {
+          display: ['"Bricolage Grotesque"', 'Manrope', 'sans-serif'],
+          sans:    ['Manrope', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  .grain {
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(22,33,56,0.05), transparent 40%),
+      radial-gradient(1px 1px at 70% 80%, rgba(22,33,56,0.04), transparent 40%);
+    background-size: 200px 200px;
+  }
+  .sun-glow {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(224,106,59,0.20), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 85% 30%, rgba(42,127,118,0.15), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 15% 50%, rgba(224,106,59,0.10), transparent 60%);
+  }
+  [data-lang]:not([data-lang="ru"]) { display:none; }
+  html[lang="en"] [data-lang="ru"],
+  html[lang="en"] [data-lang="vi"] { display:none; }
+  html[lang="en"] [data-lang="en"] { display:revert; }
+  html[lang="vi"] [data-lang="ru"],
+  html[lang="vi"] [data-lang="en"] { display:none; }
+  html[lang="vi"] [data-lang="vi"] { display:revert; }
+  .chip { display:inline-flex; align-items:center; gap:.4rem; padding:.2rem .65rem; border-radius:9999px; font-size:.72rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; }
+  .lang-active { background:#162138; color:#FAF5EE; }
+</style>
 </head>
-<body class="font-sans antialiased text-slate-600 bg-white leading-relaxed">
+<body class="font-sans bg-cream text-ink antialiased">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="bg-primary text-white p-1 rounded font-bold text-sm">S</div>
-                <div class="flex flex-col">
-                    <span class="text-primary font-bold tracking-tight uppercase text-xs leading-none">Schamber</span>
-                    <span class="text-slate-400 text-[10px] uppercase tracking-widest leading-tight">Praxis Digitalisierung</span>
-                </div>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#vorteile" class="hover:text-secondary transition text-primary">Vorteile</a>
-                <a href="#werkzeuge" class="hover:text-secondary transition text-primary">Software</a>
-                <a href="#angebot" class="hover:text-secondary transition text-primary">Paket</a>
-            </div>
-            <a href="https://calendly.com/physio-schamber/30min" target="_blank" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition shadow-sm">Termin buchen</a>
+<!-- ======================== NAV ======================== -->
+<nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-cream/80 border-b border-ink/5">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5">
+      <span class="w-9 h-9 rounded-xl bg-ink text-coral grid place-items-center font-display font-bold text-lg">S</span>
+      <span class="font-display font-bold text-ink tracking-tight">sasch</span>
+      <span class="hidden sm:inline text-[10px] uppercase tracking-widest text-ink/40 border-l border-ink/10 pl-2.5 ml-1">Nha&nbsp;Trang</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-ink/70">
+      <a href="#routes" class="hover:text-coral transition"><span data-lang="ru">Маршруты</span><span data-lang="en">Routes</span><span data-lang="vi">Tuyến</span></a>
+      <a href="#categories" class="hover:text-coral transition"><span data-lang="ru">Категории</span><span data-lang="en">Categories</span><span data-lang="vi">Danh mục</span></a>
+      <a href="#process" class="hover:text-coral transition"><span data-lang="ru">Как работает</span><span data-lang="en">How it works</span><span data-lang="vi">Cách hoạt động</span></a>
+      <a href="#pricing" class="hover:text-coral transition"><span data-lang="ru">Цены</span><span data-lang="en">Pricing</span><span data-lang="vi">Giá</span></a>
+      <a href="#faq" class="hover:text-coral transition">FAQ</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="flex items-center text-[11px] font-bold tracking-wider bg-sand rounded-full p-0.5">
+        <button data-setlang="ru" class="px-2.5 py-1 rounded-full transition">RU</button>
+        <button data-setlang="en" class="px-2.5 py-1 rounded-full transition">EN</button>
+        <button data-setlang="vi" class="px-2.5 py-1 rounded-full transition">VI</button>
+      </div>
+      <a href="https://t.me/sasch_a_scha" target="_blank" rel="noopener"
+         class="hidden sm:inline-flex items-center gap-1.5 bg-ink text-cream text-xs font-bold px-3.5 py-2 rounded-full hover:bg-coral transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm5.56 8.23-1.86 8.8c-.14.62-.51.77-1.03.48l-2.85-2.1-1.38 1.32c-.15.15-.28.28-.58.28l.2-2.93 5.36-4.84c.23-.2-.05-.32-.36-.12l-6.62 4.16-2.85-.89c-.62-.19-.63-.62.13-.92l11.12-4.29c.52-.19.97.12.8.95Z"/></svg>
+        @sasch_a_scha
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<header id="top" class="relative overflow-hidden sun-glow pt-28 pb-24 md:pt-40 md:pb-32">
+  <div class="absolute inset-0 grain pointer-events-none"></div>
+  <div class="relative max-w-6xl mx-auto px-5">
+    <div class="max-w-3xl">
+      <span class="chip bg-ink/90 text-cream mb-6">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-coral animate-pulse"></span>
+        <span data-lang="ru">🇩🇪🇪🇺🇺🇸 → 🇻🇳 Нячанг · 2026</span>
+        <span data-lang="en">🇩🇪🇪🇺🇺🇸 → 🇻🇳 Nha Trang · 2026</span>
+        <span data-lang="vi">🇩🇪🇪🇺🇺🇸 → 🇻🇳 Nha Trang · 2026</span>
+      </span>
+
+      <h1 class="font-display font-extrabold text-ink leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight">
+        <span data-lang="ru">Привезу тебе всё,<br>что <span class="relative inline-block"><span class="relative z-10">во Вьетнаме</span><span class="absolute inset-x-0 bottom-1 h-3 bg-coral/40 -z-0"></span></span><br>не купить.</span>
+        <span data-lang="en">I bring you everything<br>you <span class="relative inline-block"><span class="relative z-10">can't buy</span><span class="absolute inset-x-0 bottom-1 h-3 bg-coral/40 -z-0"></span></span><br>in Vietnam.</span>
+        <span data-lang="vi">Mọi thứ Việt&nbsp;Nam<br><span class="relative inline-block"><span class="relative z-10">không có</span><span class="absolute inset-x-0 bottom-1 h-3 bg-coral/40 -z-0"></span></span><br>— tôi mang về.</span>
+      </h1>
+
+      <p class="mt-7 text-lg md:text-xl text-ink/70 leading-relaxed max-w-2xl">
+        <span data-lang="ru">Заказы из Германии, ЕС и США напрямую в Нячанг. Оригиналы из официальных магазинов, прозрачный расчёт, EVFTA-льгота на таможне, групповые партии.</span>
+        <span data-lang="en">Orders from Germany, EU and the USA straight to Nha Trang. Genuine products from authorised stores, transparent pricing, EVFTA customs relief, group consolidation.</span>
+        <span data-lang="vi">Đặt hàng từ Đức, EU và Mỹ về thẳng Nha Trang. Hàng chính hãng từ cửa hàng ủy quyền, tính giá minh bạch, ưu đãi thuế EVFTA, gom đơn theo nhóm.</span>
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-3">
+        <a href="https://t.me/sasch_a_scha" target="_blank" rel="noopener"
+           class="group inline-flex items-center gap-2 bg-coral text-cream text-base font-bold px-6 py-3.5 rounded-full hover:bg-coralDk transition shadow-lg shadow-coral/30">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm5.56 8.23-1.86 8.8c-.14.62-.51.77-1.03.48l-2.85-2.1-1.38 1.32c-.15.15-.28.28-.58.28l.2-2.93 5.36-4.84c.23-.2-.05-.32-.36-.12l-6.62 4.16-2.85-.89c-.62-.19-.63-.62.13-.92l11.12-4.29c.52-.19.97.12.8.95Z"/></svg>
+          <span data-lang="ru">Написать в Telegram</span>
+          <span data-lang="en">Message on Telegram</span>
+          <span data-lang="vi">Nhắn Telegram</span>
+        </a>
+        <a href="mailto:sascha@digital-schamber.de"
+           class="inline-flex items-center gap-2 bg-ink/5 text-ink text-base font-bold px-6 py-3.5 rounded-full hover:bg-ink/10 transition border border-ink/10">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          sascha@digital-schamber.de
+        </a>
+      </div>
+
+      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-5 max-w-3xl">
+        <div>
+          <div class="font-display font-bold text-3xl text-ink">10%</div>
+          <div class="text-xs text-ink/60 leading-snug mt-1"><span data-lang="ru">фиксированная комиссия</span><span data-lang="en">flat service fee</span><span data-lang="vi">phí dịch vụ cố định</span></div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="pt-32 pb-20 bg-gradient-to-br from-white via-slate-50 to-secondary/5 overflow-hidden border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="fade-up">
-                <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium text-secondary bg-secondary/10 rounded-full border border-secondary/20 uppercase tracking-wider">
-                    Ehem. Physiotherapeut unterstützt Kollegen
-                </div>
-                <h1 class="text-5xl font-bold text-primary leading-tight mb-6 tracking-tight">Praxis-Finanzen: <br><span class="text-secondary">Sicher & Autonom.</span></h1>
-                <p class="text-lg text-slate-500 mb-8 max-w-lg leading-relaxed">
-                    Ich helfe Therapeuten und Heilpraktikern, ihre Buchhaltung mit Lexware & Elster selbst in die Hand zu nehmen. Remote-Support auf Augenhöhe – direkt aus der Praxis-Erfahrung.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://calendly.com/physio-schamber/30min" target="_blank" class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-center shadow-lg shadow-primary/20 hover:scale-105 transition flex items-center justify-center gap-2">
-                        <span class="iconify" data-icon="lucide:calendar"></span> Wunschtermin wählen
-                    </a>
-                    <button onclick="copyEmail(this)" class="copy-btn bg-white text-primary px-8 py-4 rounded-xl font-bold text-center border border-slate-200 hover:bg-slate-50 transition flex items-center justify-center gap-2">
-                        <span class="iconify" data-icon="lucide:mail"></span> E-Mail kopieren <span class="iconify opacity-40 ml-1" data-icon="lucide:copy"></span>
-                    </button>
-                </div>
-            </div>
-            <div class="relative fade-up delay-200 flex justify-center">
-                <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-100 max-w-lg lg:max-w-xl mx-auto bg-white">
-                    <img src="lexoffice.png" alt="Lexware Office Oberfläche" class="w-full h-auto block">
-                </div>
-            </div>
+        <div>
+          <div class="font-display font-bold text-3xl text-ink">3</div>
+          <div class="text-xs text-ink/60 leading-snug mt-1"><span data-lang="ru">маршрута: DE · EU · US</span><span data-lang="en">routes: DE · EU · US</span><span data-lang="vi">tuyến: DE · EU · US</span></div>
         </div>
-    </header>
-
-    <!-- Werkzeuge (Lexware & Elster) -->
-    <section id="werkzeuge" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-start">
-                <div>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shadow-sm">
-                            <span class="iconify text-3xl" data-icon="lucide:layout-dashboard"></span>
-                        </div>
-                        <h2 class="text-2xl font-bold text-primary tracking-tight">Lexware Office</h2>
-                    </div>
-                    <p class="text-slate-600 leading-relaxed mb-6 text-sm">
-                        Lexware Office automatisiert Ihren Bank-Abgleich und speichert Belege GoBD-konform. Als ehem. Physio habe ich das System erfolgreich für meine eigene Transparenz genutzt.
-                    </p>
-                    <ul class="space-y-4 text-xs text-slate-500">
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Automatischer Bank-Abgleich</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> GoBD-konforme Belegspeicherung</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Einfache Bedienung per App & Desktop</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary shadow-sm">
-                            <span class="iconify text-3xl" data-icon="lucide:send"></span>
-                        </div>
-                        <h2 class="text-2xl font-bold text-primary tracking-tight">Elster Schnittstelle</h2>
-                    </div>
-                    <p class="text-slate-600 leading-relaxed mb-6 text-sm">
-                        ELSTER ist die offizielle digitale Brücke zum Finanzamt. Wir richten die direkte Schnittstelle ein, damit Ihre Meldungen rechtssicher und verschlüsselt übertragen werden.
-                    </p>
-                    <ul class="space-y-4 text-xs text-slate-500">
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Umsatzsteuer-Voranmeldung per Klick</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Sichere EÜR-Übermittlung (Anlage EÜR)</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> TLS-verschlüsselte Datenübertragung</li>
-                        <li class="flex items-start gap-3"><span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span> Offizielle Zertifikats-Einbindung (.pfx)</li>
-                    </ul>
-                </div>
-            </div>
+        <div>
+          <div class="font-display font-bold text-3xl text-ink">0%</div>
+          <div class="text-xs text-ink/60 leading-snug mt-1"><span data-lang="ru">пошлина на ~99% товаров ЕС (EVFTA)</span><span data-lang="en">duty on ~99% of EU goods (EVFTA)</span><span data-lang="vi">thuế với ~99% hàng EU (EVFTA)</span></div>
         </div>
-    </section>
-
-    <!-- Psychologische Typen -->
-    <section id="vorteile" class="py-24 bg-surface border-y border-slate-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-primary mb-4 tracking-tight">Unterstützung, die zu Ihnen passt</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto italic text-sm">Jeder arbeitet anders. Mir ist wichtig, dass Sie genau den Rückhalt bekommen, den Sie brauchen.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Autonomie -->
-                <div class="p-10 rounded-3xl border border-slate-200 bg-white shadow-sm flex flex-col hover:shadow-md transition">
-                    <h3 class="text-xl font-bold text-primary mb-4">Eigenständigkeit & Durchblick</h3>
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                        Für alle, die die Fäden selbst in der Hand halten wollen. Gewinnen Sie die Freiheit zurück, Ihre Praxis-Finanzen eigenständig zu steuern.
-                    </p>
-                    <ul class="space-y-4 text-xs text-slate-500 flex-grow">
-                        <li class="flex items-start gap-3 text-slate-600">
-                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
-                            <span><strong>Maximale Entscheidungsfreiheit:</strong> Nach meiner Einrichtung entscheiden Sie selbst, ob Sie vollständig alleine weitermachen oder den Steuerberater nur noch punktuell für Fachfragen nutzen.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-600">
-                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
-                            <span><strong>Kommunikation auf Augenhöhe:</strong> Durch den direkten Zugriff auf Elster kommunizieren Sie professionell und transparent mit dem Finanzamt – ohne Umwege.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-600">
-                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
-                            <span><strong>Täglicher Echtzeit-Blick:</strong> Volle Kontrolle über jeden Beleg und den aktuellen Praxis-Gewinn direkt auf Ihrem Dashboard.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Sicherheit -->
-                <div class="p-10 rounded-3xl border border-slate-200 bg-secondary/5 shadow-sm flex flex-col hover:shadow-md transition text-slate-700">
-                    <h3 class="text-xl font-bold text-primary mb-4">Sicherheit & Rückhalt</h3>
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                        Buchhaltung muss sich nicht einsam oder bedrohlich anfühlen. Ich schaffe ein stabiles Fundament, auf dem Sie sich jederzeit sicher fühlen können.
-                    </p>
-                    <ul class="space-y-4 text-xs text-slate-500 flex-grow">
-                        <li class="flex items-start gap-3 text-slate-600">
-                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
-                            <span><strong>Papierloses Langzeit-Archiv:</strong> Das System erstellt ein GoBD-konformes Archiv aller Finanzflüsse. Die analoge Speicherung in Aktenordnern gehört damit der Vergangenheit an.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-600">
-                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
-                            <span><strong>Schutz bei Rückfragen:</strong> Bei Nachfragen vom Finanzamt haben Sie eine saubere, schnell zugreifbare Dokumentation aller Vorgänge sofort griffbereit.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-600">
-                            <span class="iconify text-secondary mt-1 flex-shrink-0" data-icon="lucide:check"></span>
-                            <span><strong>Persönliche Begleitung:</strong> Ich stehe als Puffer an Ihrer Seite, bis Sie sich in der Bedienung der Software und Elster absolut sicher fühlen.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div>
+          <div class="font-display font-bold text-3xl text-ink">100%</div>
+          <div class="text-xs text-ink/60 leading-snug mt-1"><span data-lang="ru">возврат при утере</span><span data-lang="en">refund on loss</span><span data-lang="vi">hoàn tiền nếu thất lạc</span></div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Story -->
-    <section class="py-24 bg-white">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold text-primary mb-8 underline decoration-secondary decoration-4 underline-offset-8 tracking-tight">Transparenz und Eigenständigkeit</h2>
-            <p class="text-slate-600 mb-6 leading-relaxed">
-                Ich war von 2019 bis Ende 2024 als Physiotherapeut selbstständig. In den letzten zwei Jahren meiner Praxiszeit habe ich meine Buchhaltung komplett auf ein digitales System umgestellt.
-            </p>
-            <p class="text-slate-600 mb-10 leading-relaxed">
-                Dadurch wurden meine Finanzen endlich <strong>transparent</strong>. Ich gewann die <strong>Unabhängigkeit vom Steuerberater</strong> für die laufenden Aufgaben und konnte meine Meldungen selbst bearbeiten. Diesen Prozess begleite ich heute bei meinen Kollegen.
-            </p>
+    <div class="hidden lg:block absolute right-0 top-32 w-[360px] pointer-events-none">
+      <div class="absolute -right-6 top-0 rotate-[6deg] bg-white rounded-3xl shadow-xl shadow-ink/10 p-5 w-60 border border-ink/5">
+        <div class="flex items-center gap-2 text-xs text-ink/50 font-bold uppercase tracking-widest">📦 DHL Paket · DE→VN</div>
+        <div class="mt-2 font-display font-bold text-2xl">5 kg · 46€</div>
+        <div class="text-xs text-ink/60">8–10 <span data-lang="ru">рабочих дней</span><span data-lang="en">business days</span><span data-lang="vi">ngày làm việc</span></div>
+      </div>
+      <div class="absolute right-20 top-40 -rotate-[4deg] bg-teal text-cream rounded-3xl shadow-xl shadow-teal/30 p-5 w-52">
+        <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">VAT Vietnam 2026</div>
+        <div class="mt-1 font-display font-bold text-3xl">8 %</div>
+        <div class="text-[11px] opacity-80"><span data-lang="ru">льготная ставка до 31.12.2026</span><span data-lang="en">reduced rate until 31.12.2026</span><span data-lang="vi">thuế ưu đãi đến 31.12.2026</span></div>
+      </div>
+      <div class="absolute -right-2 top-72 rotate-[3deg] bg-ink text-cream rounded-3xl shadow-xl p-5 w-56">
+        <div class="text-[10px] font-bold uppercase tracking-widest text-coral">EVFTA · 2020 → 2030</div>
+        <div class="mt-1 text-sm leading-snug"><span data-lang="ru">Фарма: <b class="text-coral">50% уже 0%</b><br>остальное — к авг. 2027.</span><span data-lang="en">Pharma: <b class="text-coral">50% at 0%</b><br>rest by Aug 2027.</span><span data-lang="vi">Dược phẩm: <b class="text-coral">50% đã 0%</b><br>còn lại đến 8/2027.</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======================== INTRO ======================== -->
+<section class="py-20 md:py-28 border-t border-ink/5 bg-sand/40">
+  <div class="max-w-5xl mx-auto px-5 grid md:grid-cols-5 gap-12 items-start">
+    <div class="md:col-span-2">
+      <span class="text-xs uppercase tracking-widest text-coral font-bold">
+        <span data-lang="ru">Кто я</span><span data-lang="en">Who I am</span><span data-lang="vi">Tôi là ai</span>
+      </span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl text-ink mt-3 tracking-tight">
+        <span data-lang="ru">Личный агент, не маркетплейс.</span>
+        <span data-lang="en">A personal agent, not a marketplace.</span>
+        <span data-lang="vi">Đại lý cá nhân, không phải sàn TMĐT.</span>
+      </h2>
+    </div>
+    <div class="md:col-span-3 text-ink/75 text-lg leading-relaxed space-y-5">
+      <p data-lang="ru">Меня зовут Саша, живу в Нячанге и каждый месяц делаю закупки по немецкой, европейской и американской онлайн-линии. Везу вам всё, что во Вьетнаме или не купить, или продают в 3 раза дороже: оригинальную косметику и уход, витамины и БАД, одежду и обувь, электронику, детские товары, спорт-инвентарь, книги, товары для дома — список открытый.</p>
+      <p data-lang="en">I'm Sasch, based in Nha Trang. Every month I run procurement through German, European and US online stores. I bring you anything Vietnam can't provide or sells at triple the price: cosmetics, vitamins, clothing, electronics, kids' items, sports gear, books, home goods — the list is open.</p>
+      <p data-lang="vi">Tôi là Sasch, sống tại Nha Trang. Mỗi tháng tôi đặt hàng qua các shop online ở Đức, EU và Mỹ. Mang về cho bạn những thứ Việt Nam không có hoặc bán gấp ba lần: mỹ phẩm, vitamin, quần áo, điện tử, đồ trẻ em, thể thao, sách, đồ gia dụng — danh mục mở.</p>
+      <p data-lang="ru">Работаю прозрачно: каждая позиция подтверждается инвойсом из магазина, каждая посылка — трек-номером. Таможня рассчитывается заранее; если по факту меньше — разницу возвращаю.</p>
+      <p data-lang="en">Transparent by default: every item backed by a store invoice, every parcel by a tracking number. Customs are estimated upfront; if the actual figure is lower, you get the difference back.</p>
+      <p data-lang="vi">Minh bạch: mỗi món đều có hóa đơn, mỗi kiện có mã theo dõi. Thuế hải quan được tính trước; nếu thực tế thấp hơn, bạn được hoàn phần chênh lệch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ROUTES ======================== -->
+<section id="routes" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-coral font-bold">
+          <span data-lang="ru">Маршруты</span><span data-lang="en">Routes</span><span data-lang="vi">Tuyến đường</span>
+        </span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl text-ink mt-3 tracking-tight">
+          <span data-lang="ru">Три источника — один адрес в Нячанге.</span>
+          <span data-lang="en">Three sources — one address in Nha Trang.</span>
+          <span data-lang="vi">Ba nguồn — một địa chỉ tại Nha Trang.</span>
+        </h2>
+      </div>
+      <p class="max-w-md text-ink/60">
+        <span data-lang="ru">DHL Paket / Express для ЕС, USPS и FedEx для США. Стандарт — по умолчанию, срочное — по запросу.</span>
+        <span data-lang="en">DHL Paket / Express for Europe, USPS and FedEx for the US. Standard by default, express on request.</span>
+        <span data-lang="vi">DHL Paket / Express cho châu Âu, USPS và FedEx cho Mỹ. Tiêu chuẩn mặc định, hỏa tốc theo yêu cầu.</span>
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <article class="bg-white rounded-3xl p-7 border border-ink/5 shadow-sm hover:shadow-lg transition">
+        <div class="flex items-center justify-between"><span class="text-4xl">🇩🇪</span><span class="chip bg-coral/10 text-coralDk">Primary</span></div>
+        <h3 class="font-display font-bold text-2xl text-ink mt-4">Germany → Nha Trang</h3>
+        <p class="text-sm text-ink/60 mt-1"><span data-lang="ru">Основной маршрут, лучшее соотношение цены и скорости.</span><span data-lang="en">Main route — best price/speed balance.</span><span data-lang="vi">Tuyến chính — cân bằng giá/tốc độ tốt nhất.</span></p>
+        <ul class="mt-6 space-y-2.5 text-sm text-ink/80">
+          <li class="flex justify-between"><span>DHL Paket 2 kg</span><span class="font-bold">≈ 12 €</span></li>
+          <li class="flex justify-between"><span>DHL Paket 5 kg</span><span class="font-bold">≈ 46 €</span></li>
+          <li class="flex justify-between"><span>DHL Paket 10 kg</span><span class="font-bold">≈ 62 €</span></li>
+          <li class="flex justify-between"><span>DHL Paket 20 kg</span><span class="font-bold">≈ 101 €</span></li>
+          <li class="flex justify-between border-t border-ink/10 pt-2.5 mt-2.5"><span>DHL Express</span><span class="font-bold">от 36 €</span></li>
+        </ul>
+        <div class="mt-6 text-xs text-ink/50"><span data-lang="ru">8–10 раб. дней · Express 2–4 дня</span><span data-lang="en">8–10 business days · Express 2–4 days</span><span data-lang="vi">8–10 ngày làm việc · Express 2–4 ngày</span></div>
+      </article>
+
+      <article class="bg-white rounded-3xl p-7 border border-ink/5 shadow-sm hover:shadow-lg transition">
+        <div class="flex items-center justify-between"><span class="text-4xl">🇪🇺</span><span class="chip bg-sand text-ink/70">+15–30%</span></div>
+        <h3 class="font-display font-bold text-2xl text-ink mt-4">Other EU → Nha Trang</h3>
+        <p class="text-sm text-ink/60 mt-1"><span data-lang="ru">Для того, что есть только во Франции, Италии, Нидерландах.</span><span data-lang="en">For items only available in France, Italy, the Netherlands.</span><span data-lang="vi">Cho hàng chỉ có ở Pháp, Ý, Hà Lan.</span></p>
+        <ul class="mt-6 space-y-2.5 text-sm text-ink/80">
+          <li class="flex justify-between"><span>Colissimo · PostNL · UPS</span><span class="font-bold">10–14 <span data-lang="ru">дней</span><span data-lang="en">days</span><span data-lang="vi">ngày</span></span></li>
+          <li class="flex justify-between"><span>Express</span><span class="font-bold">3–5 <span data-lang="ru">дней</span><span data-lang="en">days</span><span data-lang="vi">ngày</span></span></li>
+          <li class="flex justify-between border-t border-ink/10 pt-2.5 mt-2.5"><span>EVFTA</span><span class="font-bold text-teal">✓</span></li>
+        </ul>
+        <p class="mt-6 text-xs text-ink/50"><span data-lang="ru">Французская аптечная косметика, итальянские бренды, голландские БАД — лучший маршрут именно отсюда.</span><span data-lang="en">French pharmacy cosmetics, Italian brands, Dutch supplements — best sourced direct.</span><span data-lang="vi">Mỹ phẩm nhà thuốc Pháp, thương hiệu Ý, TPCN Hà Lan — nên đi thẳng.</span></p>
+      </article>
+
+      <article class="bg-white rounded-3xl p-7 border border-ink/5 shadow-sm hover:shadow-lg transition">
+        <div class="flex items-center justify-between"><span class="text-4xl">🇺🇸</span><span class="chip bg-ink/5 text-ink/70">USPS / FedEx</span></div>
+        <h3 class="font-display font-bold text-2xl text-ink mt-4">USA → Nha Trang</h3>
+        <p class="text-sm text-ink/60 mt-1"><span data-lang="ru">Витамины, спорт-гаджеты, американские бренды.</span><span data-lang="en">Vitamins, sports gadgets, US-only brands.</span><span data-lang="vi">Vitamin, thiết bị thể thao, thương hiệu Mỹ.</span></p>
+        <ul class="mt-6 space-y-2.5 text-sm text-ink/80">
+          <li class="flex justify-between"><span>USPS First-Class (≤1,8 kg)</span><span class="font-bold">от $19,40</span></li>
+          <li class="flex justify-between"><span>USPS Priority Flat Rate</span><span class="font-bold">от $32,65</span></li>
+          <li class="flex justify-between"><span>FedEx Express</span><span class="font-bold">3–5 <span data-lang="ru">дней</span><span data-lang="en">days</span><span data-lang="vi">ngày</span></span></li>
+          <li class="flex justify-between border-t border-ink/10 pt-2.5 mt-2.5"><span>EVFTA</span><span class="font-bold text-ink/40">—</span></li>
+        </ul>
+        <p class="mt-6 text-xs text-ink/50"><span data-lang="ru">USPS в 2026 бывает медленным (2–4 недели). Для срочного — FedEx.</span><span data-lang="en">USPS runs slow in 2026 (2–4 weeks). For rush: FedEx.</span><span data-lang="vi">USPS năm 2026 có thể chậm (2–4 tuần). Gấp: FedEx.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CATEGORIES ======================== -->
+<section id="categories" class="py-20 md:py-28 bg-ink text-cream relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image:radial-gradient(circle at 1px 1px, white 1px, transparent 0);background-size:32px 32px;"></div>
+  <div class="relative max-w-6xl mx-auto px-5">
+    <div class="max-w-3xl">
+      <span class="text-xs uppercase tracking-widest text-coral font-bold">
+        <span data-lang="ru">Что я привожу</span><span data-lang="en">What I bring</span><span data-lang="vi">Tôi mang gì về</span>
+      </span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl mt-3 tracking-tight">
+        <span data-lang="ru">Не только красота. Всё, что нужно дому, семье и здоровью.</span>
+        <span data-lang="en">Not just beauty. Everything a home, family and body need.</span>
+        <span data-lang="vi">Không chỉ làm đẹp. Mọi thứ cho nhà, gia đình và sức khỏe.</span>
+      </h2>
+      <p class="mt-4 text-cream/70 text-lg leading-relaxed max-w-2xl">
+        <span data-lang="ru">Список открытый: если товар продаётся в официальном магазине в Германии, ЕС или США и не входит в список запрещённого — привезу.</span>
+        <span data-lang="en">The list is open. If a product is sold by an authorised store in Germany, the EU or the US and isn't on the prohibited list, I'll bring it.</span>
+        <span data-lang="vi">Danh mục mở. Nếu sản phẩm có bán tại cửa hàng chính hãng ở Đức, EU hay Mỹ và không thuộc danh mục cấm — tôi sẽ mang về.</span>
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">💄</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Косметика и уход</span><span data-lang="en">Cosmetics & skincare</span><span data-lang="vi">Mỹ phẩm & chăm sóc da</span></h3>
+        <p class="mt-1 text-xs text-cream/60">Cerave · La Roche-Posay · Drunk Elephant · Avène · Eucerin</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">💊</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Витамины и БАД</span><span data-lang="en">Vitamins & supplements</span><span data-lang="vi">Vitamin & TPCN</span></h3>
+        <p class="mt-1 text-xs text-cream/60">Thorne · NOW Foods · Doppelherz · Orthomol · Pure Encapsulations</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">👟</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Одежда и обувь</span><span data-lang="en">Clothing & footwear</span><span data-lang="vi">Quần áo & giày</span></h3>
+        <p class="mt-1 text-xs text-cream/60">Zalando · About You · Nike · ASICS · Birkenstock · Zara</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">📱</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Электроника и гаджеты</span><span data-lang="en">Electronics & gadgets</span><span data-lang="vi">Điện tử & thiết bị</span></h3>
+        <p class="mt-1 text-xs text-cream/60">Apple · Bose · Sony · DJI · Garmin · Dyson · Kindle</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">🧸</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Детские товары</span><span data-lang="en">Kids & baby</span><span data-lang="vi">Đồ trẻ em</span></h3>
+        <p class="mt-1 text-xs text-cream/60">HiPP · Aptamil · Lego · Playmobil · Maxi-Cosi · Stokke</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">🏋️</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Спорт и фитнес</span><span data-lang="en">Sports & fitness</span><span data-lang="vi">Thể thao & fitness</span></h3>
+        <p class="mt-1 text-xs text-cream/60">Garmin · Suunto · Theragun · Hyperice · On · Oakley</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">🏠</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Дом и кухня</span><span data-lang="en">Home & kitchen</span><span data-lang="vi">Nhà & nhà bếp</span></h3>
+        <p class="mt-1 text-xs text-cream/60">WMF · Zwilling · Miele · Philips · Le Creuset · Nespresso</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">📚</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Книги и хобби</span><span data-lang="en">Books & hobbies</span><span data-lang="vi">Sách & sở thích</span></h3>
+        <p class="mt-1 text-xs text-cream/60">Amazon · Thalia · B&amp;N · Moleskine · Lamy · Faber-Castell</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">🍫</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Еда и деликатесы</span><span data-lang="en">Food & specialities</span><span data-lang="vi">Thực phẩm & đặc sản</span></h3>
+        <p class="mt-1 text-xs text-cream/60"><span data-lang="ru">Ritter Sport · Nutella · сыры · оливковое масло · кофе</span><span data-lang="en">Ritter Sport · Nutella · cheese · olive oil · coffee</span><span data-lang="vi">Ritter Sport · Nutella · phô mai · dầu ô-liu · cà phê</span></p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">🩺</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Здоровье и ТСР</span><span data-lang="en">Health & assistive</span><span data-lang="vi">Sức khỏe & thiết bị hỗ trợ</span></h3>
+        <p class="mt-1 text-xs text-cream/60">Omron · Beurer · Braun · Compex · compression · orthopaedics</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">🎨</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Творчество</span><span data-lang="en">Art & craft</span><span data-lang="vi">Nghệ thuật</span></h3>
+        <p class="mt-1 text-xs text-cream/60">Winsor &amp; Newton · Copic · Kolinsky · Hahnemühle · Staedtler</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+        <div class="text-3xl">✨</div>
+        <h3 class="mt-3 font-display font-bold text-lg"><span data-lang="ru">Премиум / Люкс</span><span data-lang="en">Premium / Luxury</span><span data-lang="vi">Cao cấp / Luxury</span></h3>
+        <p class="mt-1 text-xs text-cream/60"><span data-lang="ru">Только на руки в Нячанге · не в Россию</span><span data-lang="en">Hand-delivery in Nha Trang only · not to Russia</span><span data-lang="vi">Giao tay tại Nha Trang · không đi Nga</span></p>
+      </div>
+    </div>
+
+    <div class="mt-14 p-7 bg-white/5 border border-white/10 rounded-3xl flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="text-3xl shrink-0">⚠️</div>
+      <div>
+        <h3 class="font-display font-bold text-xl mb-3">
+          <span data-lang="ru">Чего я не вожу</span><span data-lang="en">What I don't ship</span><span data-lang="vi">Không nhận vận chuyển</span>
+        </h3>
+        <ul class="text-sm text-cream/80 space-y-1.5 leading-relaxed">
+          <li data-lang="ru">· Санкционные товары ЕС в Россию и третьи страны (Regulation 833/2014, Annex XVIII)</li>
+          <li data-lang="ru">· Рецептурные медикаменты, психоактивные вещества</li>
+          <li data-lang="ru">· Оружие, охраняемые виды (CITES)</li>
+          <li data-lang="ru">· Товары без чеков и инвойсов</li>
+          <li data-lang="en">· EU-sanctioned goods to Russia / third countries (Reg. 833/2014, Annex XVIII)</li>
+          <li data-lang="en">· Prescription medication, psychoactive substances</li>
+          <li data-lang="en">· Weapons, CITES-protected species</li>
+          <li data-lang="en">· Items without receipts or invoices</li>
+          <li data-lang="vi">· Hàng thuộc danh sách trừng phạt EU đi Nga / nước thứ ba (Reg. 833/2014, Phụ lục XVIII)</li>
+          <li data-lang="vi">· Thuốc kê đơn, chất hướng thần</li>
+          <li data-lang="vi">· Vũ khí, loài được CITES bảo vệ</li>
+          <li data-lang="vi">· Hàng không có hóa đơn</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PROCESS ======================== -->
+<section id="process" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="mb-14 max-w-2xl">
+      <span class="text-xs uppercase tracking-widest text-coral font-bold">
+        <span data-lang="ru">Как это работает</span><span data-lang="en">How it works</span><span data-lang="vi">Cách hoạt động</span>
+      </span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl text-ink mt-3 tracking-tight">
+        <span data-lang="ru">От ссылки до твоей двери — 4 шага.</span>
+        <span data-lang="en">From link to your door — 4 steps.</span>
+        <span data-lang="vi">Từ đường link đến cửa nhà bạn — 4 bước.</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="relative bg-sand/50 border border-ink/5 rounded-3xl p-6">
+        <div class="absolute -top-4 left-6 w-8 h-8 rounded-full bg-coral text-cream font-display font-bold grid place-items-center">1</div>
+        <h3 class="mt-3 font-display font-bold text-xl">
+          <span data-lang="ru">Скидываешь ссылку</span><span data-lang="en">Send me a link</span><span data-lang="vi">Gửi tôi đường link</span>
+        </h3>
+        <p class="mt-2 text-sm text-ink/70 leading-relaxed">
+          <span data-lang="ru">В Telegram: ссылка на товар, количество, район Нячанга, желаемая скорость и способ оплаты.</span>
+          <span data-lang="en">On Telegram: product link, quantity, Nha Trang district, preferred speed and payment method.</span>
+          <span data-lang="vi">Qua Telegram: link sản phẩm, số lượng, quận Nha Trang, tốc độ và cách thanh toán mong muốn.</span>
+        </p>
+      </div>
+
+      <div class="relative bg-sand/50 border border-ink/5 rounded-3xl p-6">
+        <div class="absolute -top-4 left-6 w-8 h-8 rounded-full bg-coral text-cream font-display font-bold grid place-items-center">2</div>
+        <h3 class="mt-3 font-display font-bold text-xl">
+          <span data-lang="ru">Расчёт и подтверждение</span><span data-lang="en">Quote & confirmation</span><span data-lang="vi">Báo giá & xác nhận</span>
+        </h3>
+        <p class="mt-2 text-sm text-ink/70 leading-relaxed">
+          <span data-lang="ru">Присылаю итог по формуле: цена × курс + доставка + таможня + 10% комиссия. Скрытых сборов нет.</span>
+          <span data-lang="en">I send the total: price × rate + shipping + customs + 10% fee. No hidden charges.</span>
+          <span data-lang="vi">Tôi gửi tổng: giá × tỷ giá + phí ship + thuế + 10% phí dịch vụ. Không phụ phí ẩn.</span>
+        </p>
+      </div>
+
+      <div class="relative bg-sand/50 border border-ink/5 rounded-3xl p-6">
+        <div class="absolute -top-4 left-6 w-8 h-8 rounded-full bg-coral text-cream font-display font-bold grid place-items-center">3</div>
+        <h3 class="mt-3 font-display font-bold text-xl">
+          <span data-lang="ru">Закупка и отправка</span><span data-lang="en">Purchase & shipment</span><span data-lang="vi">Mua hàng & gửi đi</span>
+        </h3>
+        <p class="mt-2 text-sm text-ink/70 leading-relaxed">
+          <span data-lang="ru">После 100% предоплаты закупаю, упаковываю, отправляю. В тот же день получаешь трек-номер и копии инвойсов.</span>
+          <span data-lang="en">After full prepayment I buy, pack and ship. You get the tracking number and invoices the same day.</span>
+          <span data-lang="vi">Sau khi thanh toán 100% tôi mua, đóng gói, gửi đi. Bạn nhận mã theo dõi và hóa đơn trong ngày.</span>
+        </p>
+      </div>
+
+      <div class="relative bg-sand/50 border border-ink/5 rounded-3xl p-6">
+        <div class="absolute -top-4 left-6 w-8 h-8 rounded-full bg-coral text-cream font-display font-bold grid place-items-center">4</div>
+        <h3 class="mt-3 font-display font-bold text-xl">
+          <span data-lang="ru">Получение в Нячанге</span><span data-lang="en">Pick-up in Nha Trang</span><span data-lang="vi">Nhận hàng tại Nha Trang</span>
+        </h3>
+        <p class="mt-2 text-sm text-ink/70 leading-relaxed">
+          <span data-lang="ru">Курьер по городу, встреча в кафе, доставка в отель или район. Оплата наличными, QR, картой или криптой — как удобнее.</span>
+          <span data-lang="en">City courier, café hand-off, or hotel / district drop. Pay in cash, QR, card or crypto — whatever suits you.</span>
+          <span data-lang="vi">Giao shipper nội thành, hẹn gặp tại café, hoặc giao đến khách sạn / khu phố. Thanh toán tiền mặt, QR, thẻ hoặc crypto.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- group parties -->
+    <div class="mt-14 bg-teal text-cream rounded-3xl p-8 md:p-10 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="chip bg-cream/15 text-cream">🚚 <span data-lang="ru">Партия</span><span data-lang="en">Group parcel</span><span data-lang="vi">Gom đơn</span></span>
+        <h3 class="mt-4 font-display font-bold text-3xl md:text-4xl">
+          <span data-lang="ru">Везём вместе — экономим до 60%.</span>
+          <span data-lang="en">Ship together — save up to 60%.</span>
+          <span data-lang="vi">Gửi chung — tiết kiệm đến 60%.</span>
+        </h3>
+        <p class="mt-3 text-cream/85 leading-relaxed">
+          <span data-lang="ru">Когда копится 3+ заявок на одном маршруте — открываю партию. Одна коробка на всех, доставка делится. Анонсы — в Telegram-канале.</span>
+          <span data-lang="en">When 3+ orders pile up on the same route I open a group parcel. One box for everyone, shipping shared. Announced in my Telegram channel.</span>
+          <span data-lang="vi">Khi có 3+ đơn cùng tuyến, tôi mở đợt gom đơn. Một kiện cho tất cả, phí ship chia đều. Thông báo trong kênh Telegram.</span>
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-cream/10 rounded-2xl p-4 border border-cream/10">
+          <div class="text-xs uppercase tracking-widest text-cream/60"><span data-lang="ru">3 посылки по 1 кг</span><span data-lang="en">3 parcels × 1 kg</span><span data-lang="vi">3 kiện × 1 kg</span></div>
+          <div class="font-display font-bold text-2xl mt-1">36 €</div>
         </div>
-    </section>
-
-    <!-- KI Option -->
-    <section class="py-20 bg-slate-50 border-t border-slate-100">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="p-8 md:p-12 bg-white rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-8 opacity-5">
-                    <span class="iconify text-9xl font-bold" data-icon="lucide:bot"></span>
-                </div>
-                <div class="relative z-10">
-                    <h3 class="text-2xl font-bold text-primary mb-4 flex items-center gap-3 tracking-tight">
-                        <span class="iconify text-secondary" data-icon="lucide:zap"></span>
-                        Option: Die intelligente Praxis (KI)
-                    </h3>
-                    <p class="text-sm text-slate-600 mb-8 max-w-2xl leading-relaxed">
-                        Digitalisierung endet nicht bei der Buchhaltung. Als optionale Erweiterung unterstütze ich Sie dabei, eine **lokale KI** auf Ihrem Praxis-Rechner einzurichten – ohne Cloud und zu 100% datenschutzkonform. Durchsuchen Sie Ihre Fachliteratur & PDFs in Sekunden.
-                    </p>
-                    <div class="flex items-center gap-4 text-[10px] text-slate-500 uppercase tracking-widest font-bold">
-                        <span class="flex items-center gap-1"><span class="iconify text-secondary" data-icon="lucide:shield-check"></span> 100% DSGVO</span>
-                        <span class="flex items-center gap-1"><span class="iconify text-secondary" data-icon="lucide:check"></span> Keine monatlichen Kosten</span>
-                    </div>
-                </div>
-            </div>
+        <div class="bg-cream/10 rounded-2xl p-4 border border-cream/10">
+          <div class="text-xs uppercase tracking-widest text-cream/60"><span data-lang="ru">1 партия на 3 кг</span><span data-lang="en">1 group box 3 kg</span><span data-lang="vi">1 kiện chung 3 kg</span></div>
+          <div class="font-display font-bold text-2xl mt-1">46 €</div>
+          <div class="text-xs text-cream/70 mt-1"><span data-lang="ru">≈15 €/чел · −55%</span><span data-lang="en">≈15 €/person · −55%</span><span data-lang="vi">≈15 €/người · −55%</span></div>
         </div>
-    </section>
-
-    <!-- Paket & Preis -->
-    <section id="angebot" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="bg-primary rounded-3xl p-10 md:p-16 text-white shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-secondary opacity-10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                <h2 class="text-3xl font-bold mb-4 tracking-tight">Das Autonomie-Paket</h2>
-                <p class="text-blue-100 mb-10 leading-relaxed">Einmaliges Setup & 12 Monate Begleitung bis zum ersten eigenständigen Abschluss.</p>
-                
-                <div class="grid md:grid-cols-2 gap-10 mb-12">
-                    <ul class="space-y-4 text-sm">
-                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl flex-shrink-0" data-icon="lucide:check"></span> Lexware & Elster Ersteinrichtung</li>
-                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl flex-shrink-0" data-icon="lucide:check"></span> Workflow-Setup für Praxis-Software</li>
-                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl flex-shrink-0" data-icon="lucide:check"></span> Gemeinsame Verbuchung realer Belege</li>
-                        <li class="flex items-center gap-3"><span class="iconify text-secondary text-xl flex-shrink-0" data-icon="lucide:check"></span> Unbegrenzte Rückfragen per Support</li>
-                    </ul>
-                    <div class="flex flex-col justify-center bg-white/5 p-6 rounded-2xl border border-white/10">
-                        <div class="text-4xl font-bold mb-1 tracking-tighter">950 €</div>
-                        <div class="text-xs opacity-60 mb-4 uppercase tracking-widest font-medium">Einmalinvestition zzgl. MwSt.</div>
-                        <p class="text-[10px] opacity-60 italic mb-4 leading-tight">Keine Anzahlung nötig – Rechnung erst nach Setup.</p>
-                        <button onclick="copyPhone(this)" class="copy-btn text-[11px] text-secondary font-bold flex items-center gap-1">
-                            <span class="iconify" data-icon="lucide:phone"></span> Fragen? WhatsApp: +49 156 79779534 <span class="iconify opacity-50" data-icon="lucide:copy"></span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://calendly.com/physio-schamber/30min" target="_blank" class="bg-secondary text-white px-8 py-4 rounded-xl font-bold text-center hover:shadow-lg transition flex items-center justify-center gap-2">
-                        <span class="iconify text-xl" data-icon="lucide:calendar"></span> Wunschtermin sichern
-                    </a>
-                    <button onclick="copyEmail(this)" class="copy-btn bg-primary/30 text-white border border-white/30 px-8 py-4 rounded-xl font-bold text-center hover:bg-primary/40 transition flex items-center justify-center gap-2">
-                        <span class="iconify text-xl" data-icon="lucide:mail"></span> E-Mail kopieren <span class="iconify opacity-50 ml-1" data-icon="lucide:copy"></span>
-                    </button>
-                </div>
-                <p class="mt-8 text-[10px] opacity-40 uppercase tracking-widest leading-relaxed">Hinweis: Schamber Praxis Digitalisierung bietet technische Unterstützung an. Keine Steuerberatung.</p>
-            </div>
+        <div class="bg-cream/10 rounded-2xl p-4 border border-cream/10">
+          <div class="text-xs uppercase tracking-widest text-cream/60"><span data-lang="ru">5 посылок по 2 кг</span><span data-lang="en">5 parcels × 2 kg</span><span data-lang="vi">5 kiện × 2 kg</span></div>
+          <div class="font-display font-bold text-2xl mt-1">60 €</div>
         </div>
-    </section>
-
-    <!-- Kontakt -->
-    <section id="kontakt" class="py-24 bg-white border-t border-slate-100">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-primary mb-6 tracking-tight">Lassen Sie uns starten.</h2>
-            <p class="text-lg text-slate-500 mb-12 leading-relaxed max-w-2xl mx-auto">Remote-Support via AnyDesk & WhatsApp Call oder direkt über Satellite.</p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <!-- Buchung -->
-                <a href="https://calendly.com/physio-schamber/30min" target="_blank" class="flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg transition">
-                    <span class="iconify text-xl" data-icon="lucide:calendar"></span> Termin in Calendly wählen
-                </a>
-                <!-- Email Copy -->
-                <button onclick="copyEmail(this)" class="copy-btn flex items-center justify-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold hover:shadow-md transition text-primary">
-                    <span class="iconify text-secondary text-xl" data-icon="lucide:mail"></span> info@digital-schamber.de <span class="iconify opacity-30 ml-1" data-icon="lucide:copy"></span>
-                </button>
-                <!-- Telefon Copy -->
-                <button onclick="copyPhone(this)" class="copy-btn flex items-center justify-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold hover:shadow-md transition text-primary">
-                    <span class="iconify text-secondary text-xl" data-icon="lucide:phone"></span> +49 (0) 156 79779534 <span class="iconify opacity-30 ml-1" data-icon="lucide:copy"></span>
-                </button>
-            </div>
-            <p class="mt-8 text-xs text-slate-400">Hinweis: Gerne auch via WhatsApp erreichbar. Beste Erreichbarkeit vormittags.</p>
+        <div class="bg-cream/10 rounded-2xl p-4 border border-cream/10">
+          <div class="text-xs uppercase tracking-widest text-cream/60"><span data-lang="ru">1 партия на 10 кг</span><span data-lang="en">1 group box 10 kg</span><span data-lang="vi">1 kiện chung 10 kg</span></div>
+          <div class="font-display font-bold text-2xl mt-1">62 €</div>
+          <div class="text-xs text-cream/70 mt-1"><span data-lang="ru">≈12,4 €/чел · −60%</span><span data-lang="en">≈12.4 €/person · −60%</span><span data-lang="vi">≈12,4 €/người · −60%</span></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="py-16 bg-slate-50 border-t border-slate-100 text-center text-[10px] text-slate-400 uppercase tracking-widest px-6">
-        <div class="max-w-7xl mx-auto space-y-4 font-medium">
-            <p class="text-slate-600">Schamber E-Trade LLC | Schamber Praxis Digitalisierung</p>
-            <p>30 N Gould St, Ste R | Sheridan, WY 82801, USA</p>
-            <div class="flex justify-center gap-6 text-[11px] mt-4">
-                <a href="impressum.html" class="underline hover:text-primary transition">Impressum</a>
-                <a href="datenschutz.html" class="underline hover:text-primary transition">Datenschutz</a>
-            </div>
-            <p class="mt-8 pt-8 border-t border-slate-200 text-[9px] lowercase opacity-50 italic">© 2026 digital-schamber.de - Alexander Schamber</p>
+<!-- ======================== PRICING & EVFTA ======================== -->
+<section id="pricing" class="py-20 md:py-28 bg-sand/40">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-5 gap-10 items-start">
+    <div class="md:col-span-2">
+      <span class="text-xs uppercase tracking-widest text-coral font-bold">
+        <span data-lang="ru">Формула и таможня</span><span data-lang="en">Formula & customs</span><span data-lang="vi">Công thức & thuế</span>
+      </span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl text-ink mt-3 tracking-tight">
+        <span data-lang="ru">Ничего скрытого.</span>
+        <span data-lang="en">Nothing hidden.</span>
+        <span data-lang="vi">Không có gì giấu giếm.</span>
+      </h2>
+      <p class="mt-4 text-ink/70 leading-relaxed">
+        <span data-lang="ru">Итог = (цена × курс EUR/VND) + доставка + таможня + комиссия 10%. Таможня считается по реальному инвойсу, не по завышенному прайсу.</span>
+        <span data-lang="en">Total = (price × EUR/VND rate) + shipping + customs + 10% fee. Customs are calculated on the real invoice, never inflated.</span>
+        <span data-lang="vi">Tổng = (giá × tỷ giá EUR/VND) + phí vận chuyển + thuế + 10% phí dịch vụ. Thuế được tính theo hóa đơn thật, không bị thổi giá.</span>
+      </p>
+    </div>
+
+    <div class="md:col-span-3 space-y-4">
+      <div class="bg-white rounded-3xl p-6 border border-ink/5">
+        <div class="flex items-center gap-3 text-sm font-bold text-coral uppercase tracking-widest">🏦 <span data-lang="ru">Таможня Вьетнама — с 18.02.2025</span><span data-lang="en">Vietnam customs — since 18.02.2025</span><span data-lang="vi">Hải quan Việt Nam — từ 18.02.2025</span></div>
+        <p class="mt-3 text-ink/80 text-sm leading-relaxed">
+          <span data-lang="ru">Беспошлинный порог 1 млн VND отменён. VAT (8% льготная до 31.12.2026) и пошлина начисляются на все курьерские посылки. Базой считается CIF: товар + фрахт + страховка.</span>
+          <span data-lang="en">The 1 M VND duty-free threshold has been abolished. VAT (8% reduced until 31.12.2026) and duty apply to every courier parcel. Basis: CIF — goods + freight + insurance.</span>
+          <span data-lang="vi">Ngưỡng miễn thuế 1 triệu VND đã bị bãi bỏ. VAT (8% ưu đãi đến 31.12.2026) và thuế áp cho mọi kiện chuyển phát. Cơ sở tính: CIF — hàng + cước + bảo hiểm.</span>
+        </p>
+      </div>
+
+      <div class="bg-ink text-cream rounded-3xl p-6 border border-ink/10">
+        <div class="flex items-center gap-3 text-sm font-bold text-coral uppercase tracking-widest">🇪🇺🇻🇳 EVFTA · 2020 → 2030</div>
+        <p class="mt-3 text-cream/85 text-sm leading-relaxed">
+          <span data-lang="ru">Соглашение о свободной торговле ЕС–Вьетнам поэтапно обнуляет пошлины на ~99% европейских товаров. Сейчас мы в 6-м году 10-летнего периода. Фармацевтика: 50% уже под нулевой пошлиной, остальные — к августу 2027. Для посылок <6000 € достаточно «декларации о происхождении» на инвойсе — не нужен EUR.1. Это минус 10–25% от стоимости для большинства европейских товаров.</span>
+          <span data-lang="en">The EU–Vietnam Free Trade Agreement is phasing out duties on ~99% of European goods. We're in year 6 of a 10-year transition. Pharmaceuticals: 50% already at zero, the rest by August 2027. For shipments under €6000 a simple origin declaration on the invoice is enough — no EUR.1 certificate required. This cuts 10–25% off the price of most European products.</span>
+          <span data-lang="vi">Hiệp định EVFTA đang giảm dần thuế với ~99% hàng hóa châu Âu. Hiện tại là năm thứ 6 của 10 năm chuyển tiếp. Dược phẩm: 50% đã về 0%, phần còn lại đến tháng 8/2027. Với kiện hàng dưới 6000 €, chỉ cần "khai báo xuất xứ" trên hóa đơn — không cần giấy EUR.1. Giúp giảm 10–25% giá hầu hết sản phẩm châu Âu.</span>
+        </p>
+        <p class="mt-3 text-cream/60 text-xs italic">
+          <span data-lang="ru">Подтверждено на саммите ЕС–Вьетнам в Ханое 29.01.2026. Для товаров из США EVFTA не действует.</span>
+          <span data-lang="en">Reaffirmed at the EU–Vietnam summit in Hanoi on 29.01.2026. Does not apply to US goods.</span>
+          <span data-lang="vi">Được khẳng định lại tại thượng đỉnh EU–Việt Nam Hà Nội, 29.01.2026. Không áp dụng cho hàng Mỹ.</span>
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 border border-ink/5">
+        <div class="flex items-center gap-3 text-sm font-bold text-coral uppercase tracking-widest">💱 <span data-lang="ru">Способы оплаты</span><span data-lang="en">Payment methods</span><span data-lang="vi">Phương thức thanh toán</span></div>
+        <div class="mt-3 grid sm:grid-cols-3 gap-3 text-sm text-ink/80">
+          <div>
+            <div class="font-bold text-ink">Nha Trang</div>
+            <p class="text-xs text-ink/60 mt-1">VND cash · Vietcombank / Techcombank / VPBank / BIDV transfer · QR Pay</p>
+          </div>
+          <div>
+            <div class="font-bold text-ink">Russia / CIS</div>
+            <p class="text-xs text-ink/60 mt-1">RUB→VND via VTB-Vietnam · USDT / USDC (Whitebird / Bybit)</p>
+          </div>
+          <div>
+            <div class="font-bold text-ink">International</div>
+            <p class="text-xs text-ink/60 mt-1">EUR / USD via SEPA · Wise · Revolut · Stripe invoice (+2.9%)</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- LOGIK FÜR KOPIER-FUNKTIONEN -->
-    <script>
-        function copyEmail(btn) {
-            const email = 'info@digital-schamber.de';
-            const originalHTML = btn.innerHTML;
-            navigator.clipboard.writeText(email).then(() => {
-                btn.innerHTML = '<span class="iconify" data-icon="lucide:check"></span> Adresse kopiert!';
-                btn.classList.add('bg-secondary', 'text-white');
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.classList.remove('bg-secondary', 'text-white');
-                }, 2000);
-            });
-        }
+<!-- ======================== FAQ ======================== -->
+<section id="faq" class="py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="mb-12 text-center">
+      <span class="text-xs uppercase tracking-widest text-coral font-bold">FAQ</span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl text-ink mt-3 tracking-tight">
+        <span data-lang="ru">Частые вопросы</span>
+        <span data-lang="en">Common questions</span>
+        <span data-lang="vi">Câu hỏi thường gặp</span>
+      </h2>
+    </div>
+    <div class="space-y-3">
+      <details class="group bg-white rounded-2xl border border-ink/5 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-ink">
+          <span><span data-lang="ru">Как долго идёт посылка?</span><span data-lang="en">How long does delivery take?</span><span data-lang="vi">Gửi hàng mất bao lâu?</span></span>
+          <span class="text-coral text-2xl group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-ink/70 text-sm leading-relaxed">
+          <span data-lang="ru">DE → VN: 8–10 рабочих дней стандарт, 2–4 дня Express. EU → VN: 10–14 / 3–5 дней. US → VN: 2–4 недели USPS, 3–5 дней FedEx. Плюс 1–3 дня на вьетнамскую таможню.</span>
+          <span data-lang="en">DE → VN: 8–10 business days standard, 2–4 days Express. EU → VN: 10–14 / 3–5 days. US → VN: 2–4 weeks USPS, 3–5 days FedEx. Plus 1–3 days customs clearance in Vietnam.</span>
+          <span data-lang="vi">DE → VN: 8–10 ngày làm việc tiêu chuẩn, 2–4 ngày Express. EU → VN: 10–14 / 3–5 ngày. US → VN: 2–4 tuần USPS, 3–5 ngày FedEx. Cộng 1–3 ngày thông quan Việt Nam.</span>
+        </p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-ink/5 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-ink">
+          <span><span data-lang="ru">Оригиналы или копии?</span><span data-lang="en">Originals or replicas?</span><span data-lang="vi">Hàng chính hãng hay nhái?</span></span>
+          <span class="text-coral text-2xl group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-ink/70 text-sm leading-relaxed">
+          <span data-lang="ru">Только оригиналы из официальных магазинов. Каждая позиция подтверждается инвойсом с названием магазина, копию высылаю вместе с трек-номером.</span>
+          <span data-lang="en">Originals only, from authorised retailers. Every item comes with a store invoice which I send along with the tracking number.</span>
+          <span data-lang="vi">Chỉ hàng chính hãng từ cửa hàng ủy quyền. Mỗi món đều có hóa đơn của cửa hàng; tôi gửi kèm mã theo dõi.</span>
+        </p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-ink/5 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-ink">
+          <span><span data-lang="ru">Что, если посылка потерялась?</span><span data-lang="en">What if a parcel is lost?</span><span data-lang="vi">Nếu kiện hàng thất lạc?</span></span>
+          <span class="text-coral text-2xl group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-ink/70 text-sm leading-relaxed">
+          <span data-lang="ru">Полная утеря — возврат 100% из моего кармана, независимо от решения перевозчика. Повреждение в транзите — претензия DHL / UPS / USPS, стандартная компенсация до 500 €.</span>
+          <span data-lang="en">Full loss — I refund 100% out of my own pocket, regardless of the carrier's decision. Damage in transit — claim with DHL / UPS / USPS, standard coverage up to €500.</span>
+          <span data-lang="vi">Mất hoàn toàn — tôi hoàn 100% từ túi mình, không phụ thuộc quyết định của hãng vận chuyển. Hư hại khi vận chuyển — yêu cầu bồi thường DHL / UPS / USPS, mức phổ biến đến 500 €.</span>
+        </p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-ink/5 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-ink">
+          <span><span data-lang="ru">Можно ли доставить не в Нячанг?</span><span data-lang="en">Delivery outside Nha Trang?</span><span data-lang="vi">Giao ngoài Nha Trang được không?</span></span>
+          <span class="text-coral text-2xl group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-ink/70 text-sm leading-relaxed">
+          <span data-lang="ru">В пределах Вьетнама — да, через внутреннего курьера (Giao Hàng Nhanh / J&T) за ваш счёт. За пределы Вьетнама — только ручная передача в Нячанге.</span>
+          <span data-lang="en">Within Vietnam — yes, via domestic courier (Giao Hàng Nhanh / J&T) at your expense. Outside Vietnam — hand delivery in Nha Trang only.</span>
+          <span data-lang="vi">Trong Việt Nam — có, qua shipper nội địa (Giao Hàng Nhanh / J&T), bạn chịu phí. Ngoài Việt Nam — chỉ giao tay tại Nha Trang.</span>
+        </p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-ink/5 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-ink">
+          <span><span data-lang="ru">Какой минимальный заказ?</span><span data-lang="en">Minimum order?</span><span data-lang="vi">Đơn tối thiểu?</span></span>
+          <span class="text-coral text-2xl group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-ink/70 text-sm leading-relaxed">
+          <span data-lang="ru">Минимума по сумме нет. Единственное ограничение — экономическая целесообразность: одна ампула на 3 € становится 15 €, потому что почта DHL стоит фиксированно. Поэтому группирую заявки в партии.</span>
+          <span data-lang="en">No minimum amount, but small items aren't always economical: a single €3 ampoule becomes €15 due to fixed shipping. That's why I consolidate into group parcels.</span>
+          <span data-lang="vi">Không có tối thiểu, nhưng món nhỏ không phải lúc nào cũng đáng: một ống 3 € có thể thành 15 € vì phí DHL cố định. Vì thế tôi gom đơn.</span>
+        </p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-ink/5 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-ink">
+          <span><span data-lang="ru">Какая валюта в расчётах?</span><span data-lang="en">Which currency is used?</span><span data-lang="vi">Dùng tiền tệ nào?</span></span>
+          <span class="text-coral text-2xl group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-ink/70 text-sm leading-relaxed">
+          <span data-lang="ru">Все расчёты — в EUR (для DE/EU) или USD (для США), итог переводится в VND по курсу дня оплаты. Курс фиксируется при подтверждении заказа.</span>
+          <span data-lang="en">Pricing is in EUR (DE/EU) or USD (USA), final total converts to VND at payment-day rate. Locked in on order confirmation.</span>
+          <span data-lang="vi">Tính bằng EUR (DE/EU) hoặc USD (Mỹ), tổng cuối được quy đổi sang VND theo tỷ giá ngày thanh toán. Khóa tỷ giá khi xác nhận đơn.</span>
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
 
-        function copyPhone(btn) {
-            const phone = '+4915679779534';
-            const originalHTML = btn.innerHTML;
-            navigator.clipboard.writeText(phone).then(() => {
-                // Bei der Telefon-Logik müssen wir prüfen, ob es der kleine oder große Button ist
-                const isSmall = btn.classList.contains('text-[11px]');
-                btn.innerHTML = isSmall ? 'Nummer kopiert!' : '<span class="iconify" data-icon="lucide:check"></span> Nummer kopiert!';
-                btn.classList.add('text-secondary');
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.classList.remove('text-secondary');
-                }, 2000);
-            });
-        }
-    </script>
+<!-- ======================== CONTACT ======================== -->
+<section id="contact" class="py-20 md:py-28 bg-coral text-cream relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 1px 1px, white 1px, transparent 0);background-size:24px 24px;"></div>
+  <div class="relative max-w-4xl mx-auto px-5 text-center">
+    <h2 class="font-display font-extrabold text-4xl md:text-6xl tracking-tight leading-tight">
+      <span data-lang="ru">Напиши — посчитаем твой заказ за 15 минут.</span>
+      <span data-lang="en">Drop me a line — we'll quote your order in 15 minutes.</span>
+      <span data-lang="vi">Nhắn tôi — báo giá đơn của bạn trong 15 phút.</span>
+    </h2>
+    <p class="mt-5 text-cream/85 text-lg max-w-2xl mx-auto">
+      <span data-lang="ru">Пришли ссылки на товары — я отвечу с итогом, сроками и способами оплаты.</span>
+      <span data-lang="en">Send the product links — I'll come back with the total, timeline and payment options.</span>
+      <span data-lang="vi">Gửi link sản phẩm — tôi sẽ phản hồi kèm tổng giá, thời gian và cách thanh toán.</span>
+    </p>
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
+      <a href="https://t.me/sasch_a_scha" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-cream text-ink text-base font-bold px-7 py-4 rounded-full hover:bg-ink hover:text-cream transition">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm5.56 8.23-1.86 8.8c-.14.62-.51.77-1.03.48l-2.85-2.1-1.38 1.32c-.15.15-.28.28-.58.28l.2-2.93 5.36-4.84c.23-.2-.05-.32-.36-.12l-6.62 4.16-2.85-.89c-.62-.19-.63-.62.13-.92l11.12-4.29c.52-.19.97.12.8.95Z"/></svg>
+        @sasch_a_scha
+      </a>
+      <a href="mailto:sascha@digital-schamber.de"
+         class="inline-flex items-center gap-2 bg-ink text-cream text-base font-bold px-7 py-4 rounded-full hover:bg-cream hover:text-ink transition">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+        sascha@digital-schamber.de
+      </a>
+    </div>
+    <div class="mt-8 text-xs text-cream/70">
+      <span data-lang="ru">Работаю в часовом поясе ICT (UTC+7). Обычно отвечаю в течение часа в рабочее время.</span>
+      <span data-lang="en">Based in ICT (UTC+7). Typical reply within an hour during working hours.</span>
+      <span data-lang="vi">Múi giờ ICT (UTC+7). Thường trả lời trong vòng một giờ giờ hành chính.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="py-12 bg-ink text-cream/70">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div>
+      <div class="flex items-center gap-2.5">
+        <span class="w-9 h-9 rounded-xl bg-coral text-ink grid place-items-center font-display font-bold text-lg">S</span>
+        <span class="font-display font-bold text-cream tracking-tight">sasch</span>
+        <span class="text-[10px] uppercase tracking-widest text-cream/40 border-l border-cream/20 pl-2.5 ml-1">Nha Trang</span>
+      </div>
+      <p class="mt-3 text-xs max-w-md leading-relaxed">
+        <span data-lang="ru">Личный закупщик в Нячанге. Германия · ЕС · США → Вьетнам. Honest pricing, EVFTA-оптимизация, прозрачность.</span>
+        <span data-lang="en">Personal shopper in Nha Trang. Germany · EU · USA → Vietnam. Honest pricing, EVFTA-optimised, transparent.</span>
+        <span data-lang="vi">Đại lý cá nhân tại Nha Trang. Đức · EU · Mỹ → Việt Nam. Giá minh bạch, tối ưu EVFTA.</span>
+      </p>
+    </div>
+    <div class="flex items-center gap-6 text-xs uppercase tracking-widest">
+      <a href="impressum.html" class="hover:text-coral transition">Impressum</a>
+      <a href="datenschutz.html" class="hover:text-coral transition"><span data-lang="ru">Приватность</span><span data-lang="en">Privacy</span><span data-lang="vi">Riêng tư</span></a>
+      <a href="https://t.me/sasch_a_scha" target="_blank" rel="noopener" class="hover:text-coral transition">Telegram</a>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-5 mt-8 pt-8 border-t border-cream/10 text-[10px] text-cream/40 tracking-widest uppercase">
+    © 2026 digital-schamber.de · Schamber E-Trade LLC
+  </div>
+</footer>
+
+<!-- ======================== LANG SCRIPT ======================== -->
+<script>
+  (function () {
+    const html = document.documentElement;
+    const buttons = document.querySelectorAll('[data-setlang]');
+    function setLang(lang) {
+      if (!['ru','en','vi'].includes(lang)) lang = 'ru';
+      html.setAttribute('lang', lang);
+      try { localStorage.setItem('sasch.lang', lang); } catch (e) {}
+      buttons.forEach(b => {
+        const active = b.getAttribute('data-setlang') === lang;
+        b.classList.toggle('lang-active', active);
+      });
+    }
+    // initial: stored → browser → default ru
+    let initial = null;
+    try { initial = localStorage.getItem('sasch.lang'); } catch(e) {}
+    if (!initial) {
+      const nav = (navigator.language || '').toLowerCase();
+      if (nav.startsWith('en')) initial = 'en';
+      else if (nav.startsWith('vi')) initial = 'vi';
+      else initial = 'ru';
+    }
+    setLang(initial);
+    buttons.forEach(b => b.addEventListener('click', () => setLang(b.getAttribute('data-setlang'))));
+  })();
+</script>
+
 </body>
 </html>

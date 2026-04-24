@@ -3,81 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung | Schamber Praxis Digitalisierung</title>
+    <title>Datenschutz · Privacy · Bảo mật | sasch</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { colors: { primary: '#011627', secondary: '#2EC4B6', surface: '#F8FAFC' }, fontFamily: { sans: ['Manrope', 'sans-serif'] } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FAF5EE',
+                        sand: '#F2E9DC',
+                        ink: '#162138',
+                        teal: '#2A7F76',
+                        coral: '#E06A3B'
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['"Bricolage Grotesque"', 'serif']
+                    }
+                }
+            }
+        }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        [data-lang]:not([data-lang="ru"]) { display:none; }
+        html[lang="en"] [data-lang="ru"], html[lang="en"] [data-lang="vi"] { display:none; }
+        html[lang="en"] [data-lang="en"] { display:revert; }
+        html[lang="vi"] [data-lang="ru"], html[lang="vi"] [data-lang="en"] { display:none; }
+        html[lang="vi"] [data-lang="vi"] { display:revert; }
+        .lang-active { background:#162138; color:#FAF5EE; }
+    </style>
 </head>
-<body class="font-sans antialiased text-slate-600 bg-surface">
+<body class="font-sans text-ink/80 bg-cream antialiased">
 
-    <nav class="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center">
-            <a href="index.html" class="flex items-center gap-2 text-primary hover:opacity-70 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                <span class="font-bold text-sm uppercase tracking-tight">Zurück zur Startseite</span>
-            </a>
+<nav class="border-b border-ink/10 bg-cream/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 text-ink hover:opacity-70 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <span class="font-display font-bold text-sm tracking-tight" data-lang="ru">На главную</span>
+            <span class="font-display font-bold text-sm tracking-tight" data-lang="en">Back home</span>
+            <span class="font-display font-bold text-sm tracking-tight" data-lang="vi">Trang chủ</span>
+        </a>
+        <div class="flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest">
+            <button data-setlang="ru" class="px-2 py-1 rounded">RU</button>
+            <button data-setlang="en" class="px-2 py-1 rounded">EN</button>
+            <button data-setlang="vi" class="px-2 py-1 rounded">VI</button>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <main class="max-w-3xl mx-auto px-6 py-16 md:py-24">
-        <h1 class="text-4xl font-bold text-primary mb-12">Datenschutzerklärung</h1>
+<main class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+    <h1 class="font-display text-4xl md:text-5xl font-bold text-ink mb-12 tracking-tight">
+        <span data-lang="ru">Политика конфиденциальности</span>
+        <span data-lang="en">Privacy Policy</span>
+        <span data-lang="vi">Chính sách bảo mật</span>
+    </h1>
 
-        <div class="space-y-12 bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100 leading-relaxed">
-            
-            <section>
-                <h2 class="text-xl font-bold text-primary mb-4">1. Datenschutz auf einen Blick</h2>
-                <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen oder meine Dienstleistungen in Anspruch nehmen.</p>
-            </section>
+    <div class="space-y-12 bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-ink/5 leading-relaxed">
 
-            <section>
-                <h2 class="text-xl font-bold text-primary mb-4">2. Verantwortliche Stelle</h2>
-                <p>Die verantwortliche Stelle für die Datenverarbeitung ist:</p>
-                <div class="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-100 text-primary">
-                    <p class="font-bold">Schamber E-Trade LLC</p>
-                    <p>Alexander Schamber</p>
-                    <p>30 N Gould St, Ste R</p>
-                    <p>Sheridan, WY 82801, USA</p>
-                    <p>E-Mail: info@digital-schamber.de</p>
-                </div>
-            </section>
+        <section>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">
+                <span data-lang="ru">1. Кратко</span>
+                <span data-lang="en">1. At a glance</span>
+                <span data-lang="vi">1. Tổng quan</span>
+            </h2>
+            <p data-lang="ru">Ниже кратко описано, что происходит с вашими персональными данными, когда вы посещаете этот сайт или обращаетесь ко мне через Telegram / электронную почту.</p>
+            <p data-lang="en">The following sections give you a plain overview of what happens to your personal data when you visit this site or contact me via Telegram or email.</p>
+            <p data-lang="vi">Phần dưới đây mô tả ngắn gọn cách dữ liệu cá nhân của bạn được xử lý khi bạn truy cập trang web này hoặc liên hệ với tôi qua Telegram hoặc email.</p>
+        </section>
 
-            <section>
-                <h2 class="text-xl font-bold text-primary mb-4">3. Terminbuchung via Calendly</h2>
-                <p>Für die Buchung von Erstgesprächen nutze ich das Tool **Calendly** (Calendly LLC, USA). Wenn Sie einen Termin buchen, werden die von Ihnen eingegebenen Daten (Name, E-Mail, Telefonnummer) auf den Servern von Calendly gespeichert. Calendly ist unter dem EU-US Data Privacy Framework zertifiziert, um ein angemessenes Datenschutzniveau zu gewährleisten.</p>
-            </section>
+        <section>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">
+                <span data-lang="ru">2. Ответственная сторона</span>
+                <span data-lang="en">2. Data controller</span>
+                <span data-lang="vi">2. Bên kiểm soát dữ liệu</span>
+            </h2>
+            <p data-lang="ru">Ответственная сторона за обработку данных:</p>
+            <p data-lang="en">The party responsible for data processing is:</p>
+            <p data-lang="vi">Bên chịu trách nhiệm xử lý dữ liệu là:</p>
+            <div class="mt-4 p-4 bg-sand/60 rounded-2xl border border-ink/10 text-ink">
+                <p class="font-bold">Schamber E-Trade LLC</p>
+                <p>Alexander Schamber</p>
+                <p>30 N Gould St, Ste R</p>
+                <p>Sheridan, WY 82801, USA</p>
+                <p>Email: sascha@digital-schamber.de</p>
+                <p>Telegram: @sasch_a_scha</p>
+            </div>
+        </section>
 
-            <section>
-                <h2 class="text-xl font-bold text-primary mb-4">4. Fernwartung via AnyDesk</h2>
-                <p>Zur Einrichtung von Lexware und technischem Support nutze ich **AnyDesk** (AnyDesk Software GmbH, Deutschland). Eine Verbindung zu Ihrem Rechner wird nur mit Ihrer ausdrücklichen Zustimmung und durch Übermittlung einer Sitzungs-ID hergestellt. Sie können den Zugriff jederzeit beenden. Während der Sitzung kann ich Bildschirminhalte einsehen; dies erfolgt ausschließlich zum Zweck der Software-Einrichtung und Schulung.</p>
-            </section>
+        <section>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">
+                <span data-lang="ru">3. Какие данные я собираю</span>
+                <span data-lang="en">3. What data I collect</span>
+                <span data-lang="vi">3. Dữ liệu tôi thu thập</span>
+            </h2>
+            <p data-lang="ru">Для выполнения заказа мне нужно: ваше имя, адрес доставки в Нячанге (район / отель / дом), номер телефона или Telegram-логин для связи, ссылки и описания запрашиваемых товаров, предпочтительный способ оплаты. Никаких «лишних» данных я не запрашиваю и не храню.</p>
+            <p data-lang="en">To fulfill an order I need: your name, a delivery address in Nha Trang (district / hotel / house), a phone number or Telegram handle for contact, links and descriptions of the items you want, and your preferred payment method. I do not request or retain any data beyond that.</p>
+            <p data-lang="vi">Để thực hiện đơn hàng, tôi cần: tên của bạn, địa chỉ giao hàng tại Nha Trang (quận / khách sạn / nhà), số điện thoại hoặc tài khoản Telegram để liên lạc, đường dẫn và mô tả sản phẩm bạn muốn đặt, và phương thức thanh toán bạn chọn. Tôi không yêu cầu hoặc lưu trữ bất kỳ dữ liệu nào khác.</p>
+        </section>
 
-            <section>
-                <h2 class="text-xl font-bold text-primary mb-4">5. Kommunikation via WhatsApp & Satellite</h2>
-                <p>Für Telefonate nutze ich **WhatsApp Business** (WhatsApp Ireland Limited) und **Satellite** (sipgate GmbH, Deutschland). Wenn Sie mich über diese Wege kontaktieren, wird Ihre Telefonnummer verarbeitet. Bitte beachten Sie, dass WhatsApp Daten in die USA übertragen kann. Die Nutzung erfolgt auf Basis Ihrer freiwilligen Kontaktaufnahme.</p>
-            </section>
+        <section>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">
+                <span data-lang="ru">4. Telegram как основной канал связи</span>
+                <span data-lang="en">4. Telegram as the main contact channel</span>
+                <span data-lang="vi">4. Telegram làm kênh liên lạc chính</span>
+            </h2>
+            <p data-lang="ru">Основная коммуникация и приём заявок идут через Telegram-аккаунт <strong>@sasch_a_scha</strong> (оператор — Telegram FZ-LLC, Дубай). Данные вашего диалога хранятся на серверах Telegram по их правилам. Я удаляю чат по вашему запросу в любой момент.</p>
+            <p data-lang="en">My main communication and order intake go through the Telegram account <strong>@sasch_a_scha</strong> (operator — Telegram FZ-LLC, Dubai). The content of your chat is stored on Telegram's servers under their rules. I will delete our chat at any point on your request.</p>
+            <p data-lang="vi">Kênh liên lạc chính và nhận đơn hàng là tài khoản Telegram <strong>@sasch_a_scha</strong> (do Telegram FZ-LLC, Dubai vận hành). Nội dung trò chuyện được lưu trên máy chủ của Telegram theo quy định của họ. Tôi sẽ xóa cuộc trò chuyện bất cứ lúc nào theo yêu cầu của bạn.</p>
+        </section>
 
-            <section>
-                <h2 class="text-xl font-bold text-primary mb-4">6. Hosting & Server-Logs</h2>
-                <p>Diese Website wird über **GitHub Pages** (GitHub Inc., USA) gehostet. Der Provider erhebt automatisch Informationen in Server-Log-Dateien (IP-Adresse, Browsertyp, Uhrzeit), die technisch notwendig sind, um die Website stabil anzuzeigen. Mit GitHub besteht ein Vertrag über Auftragsverarbeitung auf Basis von Standardvertragsklauseln.</p>
-            </section>
+        <section>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">
+                <span data-lang="ru">5. Перевозчики и таможня</span>
+                <span data-lang="en">5. Carriers & customs</span>
+                <span data-lang="vi">5. Đơn vị vận chuyển & hải quan</span>
+            </h2>
+            <p data-lang="ru">Для отправки посылок я передаю получателя (имя, адрес, телефон) перевозчику — DHL (Deutsche Post DHL Group, Германия), USPS (США), UPS или FedEx. Эти данные требуются для таможенного оформления во Вьетнаме (General Department of Vietnam Customs). Без их передачи физически невозможно получить посылку.</p>
+            <p data-lang="en">For shipping I pass the recipient's name, address and phone number to the carrier — DHL (Deutsche Post DHL Group, Germany), USPS (USA), UPS or FedEx. The same data is required by the General Department of Vietnam Customs to clear the parcel. Without that handover the package physically cannot be delivered.</p>
+            <p data-lang="vi">Để gửi hàng, tôi chuyển tên, địa chỉ và số điện thoại người nhận cho đơn vị vận chuyển — DHL (Deutsche Post DHL Group, Đức), USPS (Mỹ), UPS hoặc FedEx. Dữ liệu tương tự được Tổng cục Hải quan Việt Nam yêu cầu để thông quan. Nếu không chuyển các dữ liệu này, kiện hàng về mặt vật lý không thể giao đến bạn.</p>
+        </section>
 
-            <section>
-                <h2 class="text-xl font-bold text-primary mb-4">7. Ihre Rechte</h2>
-                <p>Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten sowie ein Recht auf Berichtigung oder Löschung. Kontaktieren Sie mich hierzu einfach unter der oben genannten E-Mail-Adresse.</p>
-            </section>
+        <section>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">
+                <span data-lang="ru">6. Платёжные провайдеры</span>
+                <span data-lang="en">6. Payment providers</span>
+                <span data-lang="vi">6. Đối tác thanh toán</span>
+            </h2>
+            <p data-lang="ru">В зависимости от выбранного способа оплаты данные платежа передаются: VTB-Vietnam (VRB) — для RUB→VND, Vietcombank / Techcombank / VPBank / BIDV — для VND-переводов, Wise / Revolut — для SEPA-платежей из ЕС, Stripe — для карточных платежей, Whitebird / Bybit — для стейблкоинов (USDT / USDC). Каждый провайдер обрабатывает данные по собственной политике конфиденциальности.</p>
+            <p data-lang="en">Depending on the chosen payment method, payment data is routed to: VTB-Vietnam (VRB) for RUB→VND transfers, Vietcombank / Techcombank / VPBank / BIDV for VND transfers, Wise / Revolut for SEPA payments from the EU, Stripe for card payments, and Whitebird / Bybit for stablecoin payments (USDT / USDC). Each of these providers processes the data under its own privacy policy.</p>
+            <p data-lang="vi">Tùy phương thức thanh toán, dữ liệu giao dịch được chuyển đến: VTB-Vietnam (VRB) cho chuyển khoản RUB→VND, Vietcombank / Techcombank / VPBank / BIDV cho chuyển khoản VND, Wise / Revolut cho chuyển khoản SEPA từ EU, Stripe cho thanh toán thẻ, Whitebird / Bybit cho thanh toán bằng stablecoin (USDT / USDC). Mỗi nhà cung cấp xử lý dữ liệu theo chính sách bảo mật riêng của họ.</p>
+        </section>
 
-            <section class="pt-8 border-t border-slate-100 italic text-sm text-slate-400 leading-relaxed">
-                <p>Stand: Februar 2026. Diese Erklärung wird regelmäßig an neue technische Abläufe angepasst.</p>
-            </section>
+        <section>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">
+                <span data-lang="ru">7. Хостинг и серверные логи</span>
+                <span data-lang="en">7. Hosting & server logs</span>
+                <span data-lang="vi">7. Máy chủ & nhật ký</span>
+            </h2>
+            <p data-lang="ru">Этот сайт размещён на <strong>GitHub Pages</strong> (GitHub Inc., США). Провайдер автоматически собирает технические данные в server-log-файлах (IP-адрес, тип браузера, время запроса) — это необходимо для стабильной работы сайта. Данные передаются в США на основании стандартных договорных условий (SCC). Cookies, трекеры и аналитика не используются.</p>
+            <p data-lang="en">This site is hosted on <strong>GitHub Pages</strong> (GitHub Inc., USA). The provider automatically collects technical data in server log files (IP address, browser type, request time) as required to serve the site reliably. Data is transferred to the USA on the basis of Standard Contractual Clauses (SCC). No cookies, trackers, or analytics are used.</p>
+            <p data-lang="vi">Trang web này được lưu trữ trên <strong>GitHub Pages</strong> (GitHub Inc., Hoa Kỳ). Nhà cung cấp tự động thu thập dữ liệu kỹ thuật trong nhật ký máy chủ (địa chỉ IP, loại trình duyệt, thời gian yêu cầu) cần thiết để cung cấp trang web một cách ổn định. Dữ liệu được chuyển đến Hoa Kỳ theo Điều khoản hợp đồng tiêu chuẩn (SCC). Không sử dụng cookie, trình theo dõi hoặc công cụ phân tích nào.</p>
+        </section>
 
-        </div>
-    </main>
+        <section>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">
+                <span data-lang="ru">8. Сроки хранения</span>
+                <span data-lang="en">8. Retention periods</span>
+                <span data-lang="vi">8. Thời gian lưu trữ</span>
+            </h2>
+            <p data-lang="ru">Данные заказа (имя, адрес, список товаров, чеки, таможенные документы) я храню <strong>12 месяцев</strong> с момента доставки — этот срок нужен на случай таможенных запросов, возвратов и гарантийных претензий. После этого данные уничтожаются, если закон не обязывает хранить дольше.</p>
+            <p data-lang="en">I retain order data (name, address, item list, invoices, customs documents) for <strong>12 months</strong> from delivery — this period covers potential customs inquiries, returns, and warranty claims. After that the data is destroyed unless a legal obligation requires longer retention.</p>
+            <p data-lang="vi">Tôi lưu trữ dữ liệu đơn hàng (tên, địa chỉ, danh sách sản phẩm, hóa đơn, chứng từ hải quan) trong <strong>12 tháng</strong> kể từ ngày giao hàng — thời gian này đủ để xử lý các yêu cầu từ hải quan, đổi trả và bảo hành. Sau đó dữ liệu sẽ bị hủy, trừ khi pháp luật yêu cầu lưu trữ lâu hơn.</p>
+        </section>
 
-    <footer class="py-12 text-center text-[10px] text-slate-400 uppercase tracking-widest">
-        <p>© 2026 digital-schamber.de</p>
-    </footer>
+        <section>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">
+                <span data-lang="ru">9. Ваши права</span>
+                <span data-lang="en">9. Your rights</span>
+                <span data-lang="vi">9. Quyền của bạn</span>
+            </h2>
+            <p data-lang="ru">У вас есть право на бесплатный доступ к своим сохранённым данным, а также право на их исправление или удаление. Для этого напишите мне на <a href="mailto:sascha@digital-schamber.de" class="text-teal underline">sascha@digital-schamber.de</a> или в Telegram <a href="https://t.me/sasch_a_scha" class="text-teal underline">@sasch_a_scha</a>.</p>
+            <p data-lang="en">You have the right to free access to the data stored about you, as well as the right to rectify or erase it. To exercise these rights, write to <a href="mailto:sascha@digital-schamber.de" class="text-teal underline">sascha@digital-schamber.de</a> or via Telegram <a href="https://t.me/sasch_a_scha" class="text-teal underline">@sasch_a_scha</a>.</p>
+            <p data-lang="vi">Bạn có quyền truy cập miễn phí dữ liệu được lưu trữ về bạn, cũng như quyền yêu cầu chỉnh sửa hoặc xóa. Để thực hiện các quyền này, vui lòng viết đến <a href="mailto:sascha@digital-schamber.de" class="text-teal underline">sascha@digital-schamber.de</a> hoặc qua Telegram <a href="https://t.me/sasch_a_scha" class="text-teal underline">@sasch_a_scha</a>.</p>
+        </section>
 
+        <section class="pt-8 border-t border-ink/10 italic text-sm text-ink/50 leading-relaxed">
+            <p data-lang="ru">Редакция: апрель 2026. Документ обновляется по мере изменения используемых сервисов.</p>
+            <p data-lang="en">Revision: April 2026. This document is updated whenever the underlying services change.</p>
+            <p data-lang="vi">Phiên bản: Tháng 4 năm 2026. Tài liệu được cập nhật bất cứ khi nào các dịch vụ liên quan thay đổi.</p>
+        </section>
+
+    </div>
+</main>
+
+<footer class="py-12 text-center text-[10px] text-ink/40 uppercase tracking-widest">
+    <p>© 2026 digital-schamber.de · Schamber E-Trade LLC</p>
+</footer>
+
+<script>
+(function () {
+    const html = document.documentElement;
+    const buttons = document.querySelectorAll('[data-setlang]');
+    function setLang(lang) {
+        if (!['ru','en','vi'].includes(lang)) lang = 'ru';
+        html.setAttribute('lang', lang);
+        try { localStorage.setItem('sasch.lang', lang); } catch (e) {}
+        buttons.forEach(b => b.classList.toggle('lang-active', b.getAttribute('data-setlang') === lang));
+    }
+    let initial = null;
+    try { initial = localStorage.getItem('sasch.lang'); } catch(e) {}
+    if (!initial) {
+        const nav = (navigator.language || '').toLowerCase();
+        if (nav.startsWith('en')) initial = 'en';
+        else if (nav.startsWith('vi')) initial = 'vi';
+        else initial = 'ru';
+    }
+    setLang(initial);
+    buttons.forEach(b => b.addEventListener('click', () => setLang(b.getAttribute('data-setlang'))));
+})();
+</script>
 </body>
 </html>
